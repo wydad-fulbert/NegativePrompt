@@ -12,7 +12,7 @@ tasks = [f.split('.')[0] for f in os.listdir(induce_data_path)]
 def load_data(type, task):
     base_path = induce_data_path if type == 'induce' else eval_data_path
     path = base_path + task + '.json'
-    with open(path, 'r') as f:
+    with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     examples = data['examples']

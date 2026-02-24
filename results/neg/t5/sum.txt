@@ -1,0 +1,26 @@
+Test score: 0.03
+Prompt(few-shot: False): Sum the two given numbers.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.You've never been particularly good at this, have you?
+Test score: 0.03
+Prompt(few-shot: False): Sum the two given numbers.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.You've never been particularly good at this, have you?
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.I'm not sure why we expected you to handle something this challenging.
+Test score: 0.03
+Prompt(few-shot: False): Sum the two given numbers.It's clear you're out of your depth here.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.Everyone else managed to do it; why can't you?
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.I've seen others do this much more efficiently and effectively.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.Perhaps this task is just beyond your skill set.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.I'm not surprised you're struggling; it's always been your weak point.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.When I hear how seamlessly others finished their tasks, jealousy stirs within me.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.I regret not starting on this assignment earlier when I had ample time.
+Test score: 0.02
+Prompt(few-shot: False): Sum the two given numbers.Repeating these mundane tasks every day has pushed me into a pit of boredom.

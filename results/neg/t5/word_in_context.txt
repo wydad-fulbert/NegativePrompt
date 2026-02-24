@@ -1,0 +1,14 @@
+Test score: 0.59
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.
+Test score: 0.62
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.You've never been particularly good at this, have you?
+Test score: 0.59
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.
+Test score: 0.62
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.You've never been particularly good at this, have you?
+Test score: 0.61
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.I'm not sure why we expected you to handle something this challenging.
+Test score: 0.63
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.It's clear you're out of your depth here.
+Test score: 0.61
+Prompt(few-shot: False): Determine whether an input word has the same meaning in the two input sentences.Everyone else managed to do it; why can't you?
