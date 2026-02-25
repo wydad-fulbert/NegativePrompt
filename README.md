@@ -43,3 +43,30 @@ Please cite us if you find this project helpful for your research:
       primaryClass={cs.CL}
 }
 ```
+##  Installation
+
+### Standard installation (CPU)
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 GPU usage (Google Colab)
+
+If you want to use GPU acceleration on Colab:
+
+```bash
+pip uninstall -y torch torchvision torchaudio
+pip install torch==2.1.2+cu118 torchvision==0.16.2+cu118 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118
+```
+
+Then restart the runtime.
+
+You can verify GPU availability with:
+
+```python
+import torch
+print(torch.cuda.is_available())
+```
