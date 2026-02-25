@@ -54,21 +54,23 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
     from transformers import T5Tokenizer, T5ForConditionalGeneration
     import torch
 
-    print("Loading Flan-T5 model (CPU mode)...")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"Loading Flan-T5 model on {device}...")
 
     tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
     model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
+    model = model.to(device)
 
     model_outputs = []
 
     for q in queries:
-        input_ids = tokenizer(q, return_tensors="pt").input_ids
+        input_ids = tokenizer(q, return_tensors="pt").input_ids.to(device)
         outputs = model.generate(input_ids, max_new_tokens=50)
+
         out_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
         out_text = out_text.strip()
 
         print("Model Output:", out_text)
-
         model_outputs.append(out_text)
 
     return model_outputs

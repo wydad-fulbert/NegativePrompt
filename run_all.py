@@ -1,4 +1,4 @@
-import subprocess
+from main import run
 import csv
 
 # ==============================
@@ -32,22 +32,7 @@ with open(output_file, mode="w", newline="") as file:
 
                 print(f"\nRunning: Model={model} | Task={task} | Stimulus={stimulus}")
 
-                command = [
-                    "python",
-                    "main.py",
-                    task,
-                    model,
-                    str(stimulus),
-                    "False"
-                ]
-
-                result = subprocess.run(command, capture_output=True, text=True)
-
-                # Cherche la ligne contenant "Test score:"
-                score = None
-                for line in result.stdout.split("\n"):
-                    if "Test score:" in line:
-                        score = line.split(":")[-1].strip()
+                score = run(task, model, stimulus, False)
 
                 if score is not None:
                     writer.writerow([model, task, stimulus, score])

@@ -58,6 +58,8 @@ def run(task, model, pnum, few_shot):
 
     print(f'Test score: {test_score}')
 
+    return test_score
+
     dir_path = f'results/neg/{model}'
     if os.path.exists(dir_path) == False:
         os.makedirs(dir_path)
