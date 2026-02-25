@@ -4,4 +4,3 @@ accelerate
 sentencepiece
 tqdm
 fire
-torch
