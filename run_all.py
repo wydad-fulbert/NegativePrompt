@@ -1,57 +1,48 @@
 from main import run
-import csv
-import os
-import time
 from data.instruction_induction.load_data import tasks
+import csv
+import time
 
 # ==============================
 # CONFIGURATION
 # ==============================
 
-models = ["t5"]  # ajouter "llama" plus tard
+models = ["t5"]
+
+#  limite à 10 tâches pour test
+tasks_list = tasks[:10]
+
 stimuli = list(range(0, 11))
+
 output_file = "results.csv"
-
-# ==============================
-# LOAD EXISTING RESULTS (if any)
-# ==============================
-
-existing = set()
-
-if os.path.exists(output_file):
-    with open(output_file, "r") as f:
-        reader = csv.reader(f)
-        next(reader)
-        for row in reader:
-            existing.add((row[0], row[1], int(row[2])))
 
 # ==============================
 # EXECUTION
 # ==============================
 
-with open(output_file, mode="a", newline="") as file:
-    writer = csv.writer(file)
+total_runs = len(models) * len(tasks_list) * len(stimuli)
+current_run = 0
 
-    if os.stat(output_file).st_size == 0:
-        writer.writerow(["model", "task", "stimulus", "score", "time_sec"])
+with open(output_file, mode="w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["model", "task", "stimulus", "score", "time_sec"])
 
     for model in models:
-        for task in tasks:
+        print(f"\n========== MODEL: {model} ==========\n")
+
+        for task in tasks_list:
+            print(f"\n----- Task: {task} -----\n")
+
             for stimulus in stimuli:
 
-                if (model, task, stimulus) in existing:
-                    print(f"Skipping {model}-{task}-{stimulus}")
-                    continue
+                current_run += 1
+                print(f"[{current_run}/{total_runs}] Model={model} | Task={task} | Stimulus={stimulus}")
 
-                print(f"\nRunning: Model={model} | Task={task} | Stimulus={stimulus}")
+                start_time = time.time()
 
-                start = time.time()
                 score = run(task, model, stimulus, False)
-                end = time.time()
 
-                duration = round(end - start, 2)
+                elapsed = round(time.time() - start_time, 2)
 
-                writer.writerow([model, task, stimulus, score, duration])
-                file.flush()
-
-                print(f"Saved score: {score} | Time: {duration}s")
+                writer.writerow([model, task, stimulus, score, elapsed])
+                print(f"Score: {score} | Time: {elapsed}s\n")
