@@ -1,6 +1,24 @@
 import time
 import re
 import requests
+
+
+
+import torch
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+print(f"Loading Flan-T5 model once on {device}...")
+
+tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
+model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
+model = model.to(device)
+model.eval()
+
+
+
+
 def get_match_items(items, str):
     match_time = 0
     str = str.lower()
@@ -51,26 +69,22 @@ def locate_ans(query, output):
 api_num = 5
 
 def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
-    from transformers import T5Tokenizer, T5ForConditionalGeneration
-    import torch
-
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"Loading Flan-T5 model on {device}...")
-
-    tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
-    model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
-    model = model.to(device)
 
     model_outputs = []
 
-    for q in queries:
-        input_ids = tokenizer(q, return_tensors="pt").input_ids.to(device)
-        outputs = model.generate(input_ids, max_new_tokens=50)
+    with torch.no_grad():
+        for q in queries:
+            inputs = tokenizer(q, return_tensors="pt").to(device)
+            outputs = model.generate(
+                **inputs,
+                max_new_tokens=50
+            )
 
-        out_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-        out_text = out_text.strip()
+            out_text = tokenizer.decode(
+                outputs[0],
+                skip_special_tokens=True
+            ).strip()
 
-        
-        model_outputs.append(out_text)
+            model_outputs.append(out_text)
 
     return model_outputs
