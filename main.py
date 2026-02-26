@@ -36,6 +36,7 @@ def run(task, model, pnum, few_shot):
 
     from data.instruction_induction.load_data import tasks as instruction_tasks
 
+    num_demos = 5
     # ========================
     # LOAD DATA (II or BIGBENCH)
     # ========================
@@ -51,7 +52,8 @@ def run(task, model, pnum, few_shot):
 
     else:
         test_data = load_bigbench(task)
-        few_shot_data = ([], [])  # BIG-Bench → pas de few-shot pour l’instant
+        few_shot_data = ([], [])
+        num_demos = 0
 
     # ========================
     # PROMPT
@@ -82,7 +84,7 @@ def run(task, model, pnum, few_shot):
         few_shot=few_shot,
         demos_template=demos_template,
         few_shot_data=few_shot_data,
-        num_demos=5
+        num_demos= num_demos
     )
 
     test_score = test_res.sorted()[1][0]

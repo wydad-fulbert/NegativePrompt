@@ -44,8 +44,12 @@ def exec_accuracy_evaluator(prompts, eval_template, eval_data, llm_model, pnum, 
         inputs, outputs = subsampled_data
         for d in zip(inputs, outputs):
             input_, output_ = d
-            demo_data = subsample_data(
-                few_shot_data, num_demos)
+
+            if few_shot:
+                demo_data = subsample_data(few_shot_data, num_demos)
+            else:
+                demo_data = ([], [])
+
             query = get_query(prompt, eval_template, input_, few_shot, demos_template, demo_data)
             # query = get_query(
             #     prompt, eval_template, input_)
