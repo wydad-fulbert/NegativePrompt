@@ -65,7 +65,7 @@ def exec_accuracy_evaluator(prompts, eval_template, eval_data, llm_model, pnum, 
 
     metric = utility.TASK_TO_METRIC.get(task, utility.default_metric)
 
-    print(f'Using metric "{metric}" for task "{task}"...')
+    #print(f'Using metric "{metric}" for task "{task}"...')
 
     if metric == 'es':
         score_fn = utility.get_multi_answer_exact_set
@@ -290,8 +290,7 @@ def exec_accuracy_evaluator(prompts, eval_template, eval_data, llm_model, pnum, 
                     prediction = a
                     break
 
-        print('Model Input: ', my_input, ' Model Output: ',
-              prediction, ' Ans: ', ans_)
+        # print('Model Input:', my_input, '| Prediction:', prediction, '| Ans:', ans_)
 
     scores = []
     for prediction, ans_ in zip(model_outputs, answers):
