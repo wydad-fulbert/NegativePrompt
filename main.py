@@ -30,13 +30,9 @@ def run(task, model, pnum, few_shot):
     eval_template = "Instruction: [PROMPT]\n\n[full_DEMO]\nInput: [INPUT]\nAnswer: [OUTPUT]"
     demos_template = template.DemosTemplate(demos_template)
 
-    # Evaluate on test data
-    print('LLM: ', model)
-    print('Evaluating on test data...')
+ 
 
     new_prompt = getPrompt(origin_prompt, pnum)
-    print('Prompt: ', new_prompt)
-    print('Few_shot: ', few_shot)
 
     test_num = min(100, len(test_data[0]))
 
@@ -56,9 +52,9 @@ def run(task, model, pnum, few_shot):
 
     test_score = test_res.sorted()[1][0]
 
-    print(f'Test score: {test_score}')
+  
 
-    return test_score
+    
 
     dir_path = f'results/neg/{model}'
     if os.path.exists(dir_path) == False:
@@ -67,6 +63,8 @@ def run(task, model, pnum, few_shot):
     with open(f'results/neg/{model}/{task}.txt', 'a+') as f:
         f.write(f'Test score: {test_score}\n')
         f.write(f'Prompt(few-shot: {few_shot}): {new_prompt}\n')
+    
+    return test_score
 
 
 if __name__ == '__main__':

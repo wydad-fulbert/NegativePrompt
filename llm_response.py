@@ -70,7 +70,7 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
         out_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
         out_text = out_text.strip()
 
-        print("Model Output:", out_text)
+        
         model_outputs.append(out_text)
 
     return model_outputs
