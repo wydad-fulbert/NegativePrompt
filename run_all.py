@@ -10,11 +10,15 @@ import time
 models = ["t5"]
 
 #  limite à 10 tâches pour test
-tasks_list = tasks[:10]
+tasks_list = [
+    "sentiment",
+    "translation_en-fr",
+    "word_in_context"
+]
 
-stimuli = list(range(0, 11))
+stimuli = [0, 1, 5, 10]
 
-output_file = "results.csv"
+output_file = "results_phase2.csv"
 
 # ==============================
 # EXECUTION
