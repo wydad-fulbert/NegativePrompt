@@ -122,31 +122,45 @@ def load_model(model_name):
 def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
 
     model_outputs = []
-    
 
     tokenizer, model, model_type = load_model(llm_model)
+
     with torch.no_grad():
         for q in queries:
-            
-            if model_type == "t5":
-                  inputs = tokenizer(q, return_tensors="pt").to(device)
-                  outputs = model.generate(
-                      **inputs,
-                      max_new_tokens=50,
-                      do_sample=False
-                  )
-            else:
-                  inputs = tokenizer(q, return_tensors="pt", truncation=True)
-                  inputs = {k: v.to(model.device)for k, v in inputs.items()}
-                  outputs = model.generate(
-                      **inputs,
-                      max_new_tokens=50,
-                      do_sample=False,
-                      pad_token_id=tokenizer.eos_token_id
-                   )
 
-            out_text = tokenizer.decode(
+            # ===== T5 =====
+            if model_type == "t5":
+                inputs = tokenizer(q, return_tensors="pt").to(device)
+
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=50,
+                    do_sample=False
+                )
+
+                out_text = tokenizer.decode(
                     outputs[0],
+                    skip_special_tokens=True
+                ).strip()
+
+            # ===== Llama2 / Vicuna =====
+            else:
+                inputs = tokenizer(q, return_tensors="pt", truncation=True)
+                inputs = {k: v.to(model.device) for k, v in inputs.items()}
+
+                outputs = model.generate(
+                    **inputs,
+                    max_new_tokens=50,
+                    do_sample=False,
+                    pad_token_id=tokenizer.eos_token_id
+                )
+
+                # ⚠️ On enlève le prompt
+                prompt_len = inputs["input_ids"].shape[1]
+                gen_tokens = outputs[0][prompt_len:]
+
+                out_text = tokenizer.decode(
+                    gen_tokens,
                     skip_special_tokens=True
                 ).strip()
 
