@@ -3,7 +3,6 @@ import re
 import requests
 
 
-
 import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
@@ -15,9 +14,6 @@ tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large")
 model = T5ForConditionalGeneration.from_pretrained("google/flan-t5-large")
 model = model.to(device)
 model.eval()
-
-
-
 
 def get_match_items(items, str):
     match_time = 0
@@ -77,8 +73,10 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
             inputs = tokenizer(q, return_tensors="pt").to(device)
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=50
-            )
+                max_new_tokens=50,
+                do_sample=False,
+                temperature=0.0
+)
 
             out_text = tokenizer.decode(
                 outputs[0],

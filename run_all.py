@@ -1,7 +1,21 @@
 from main import run
 from data.instruction_induction.load_data import tasks
+import random
+import numpy as np
+import torch
 import csv
 import time
+
+
+# ==============================
+# SEED FIXE
+# ==============================
+SEED = 42
+random.seed(SEED)
+np.random.seed(SEED)
+torch.manual_seed(SEED)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed_all(SEED)
 
 # ==============================
 # CONFIGURATION
@@ -31,7 +45,16 @@ current_run = 0
 
 with open(output_file, mode="w", newline="") as file:
     writer = csv.writer(file)
-    writer.writerow(["model", "task", "stimulus", "score", "time_sec"])
+    writer.writerow([
+    "model",
+    "task",
+    "stimulus",
+    "score",
+    "time_sec",
+    "temperature",
+    "few_shot",
+    "seed"
+])
 
     for model in models:
         print(f"\n========== MODEL: {model} ==========\n")
@@ -50,5 +73,14 @@ with open(output_file, mode="w", newline="") as file:
 
                 elapsed = round(time.time() - start_time, 2)
 
-                writer.writerow([model, task, stimulus, score, elapsed])
+                writer.writerow([
+                           model,
+                           task,
+                           stimulus,
+                           score,
+                           elapsed,
+                           0.0,
+                           False,
+                           42
+])
                 print(f"Score: {score} | Time: {elapsed}s\n")
