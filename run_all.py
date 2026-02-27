@@ -21,25 +21,11 @@ if torch.cuda.is_available():
 # CONFIGURATION
 # ==============================
 
-models = ["t5"]
+models = ["llama2"]
 
 # 
-tasks_list = [
-    # Instruction Induction (5)
-    "sentiment",
-    "translation_en-fr",
-    "word_in_context",
-    "active_to_passive",
-    "negation",
-
-    # BigBench (5)
-    "dyck_languages",
-    "object_counting",
-    "ruin_names",
-    "word_sorting",
-    "disambiguation_qa",
-]
-stimuli = [0, 1, 5, 10]
+tasks_list = ["sentiment"]
+stimuli = [0]
 
 output_file = "results_phase2.csv"
 
@@ -60,13 +46,14 @@ with open(output_file, mode="w", newline="") as file:
     "time_sec",
     "prompt",
     "metric",
-    "top_p",
-    "max_new-tokens",
+    "evaluation_method",
     "temperature",
+    "top_p",
+    "max_new_tokens",
+    "do_sample",
     "few_shot",
     "num_samples",
-    "do_sample",
-    "seed"
+    "seed",
 ])
 
     for model in models:
@@ -94,6 +81,7 @@ with open(output_file, mode="w", newline="") as file:
                            elapsed,
                            details["prompt"],
                            details["metric"],
+                           "exec_accuracy_evaluator",
                            0.0,  #temperature
                            1.0,  #top_p
                            50,   #max_new_tokens
@@ -103,3 +91,22 @@ with open(output_file, mode="w", newline="") as file:
                            SEED
 ])
                 print(f"Score: {score} | Time: {elapsed}s\n")
+
+
+
+writer.writerow([
+    model,
+    task,
+    stimulus,
+    score,
+    elapsed,
+    details["prompt"],
+    details["metric"],
+    0.0,      # temperature
+    1.0,      # top_p
+    50,       # max_new_tokens
+    False,    # do_sample
+    False,    # few_shot
+    details["num_samples"],
+    SEED,
+])
