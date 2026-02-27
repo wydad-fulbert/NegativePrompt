@@ -25,12 +25,19 @@ models = ["t5"]
 
 # 
 tasks_list = [
+    # Instruction Induction (5)
     "sentiment",
     "translation_en-fr",
     "word_in_context",
+    "active_to_passive",
+    "negation",
+
+    # BigBench (5)
+    "dyck_languages",
+    "object_counting",
+    "ruin_names",
     "word_sorting",
-    "movie_recommendation",
-    "dyck_languages"
+    "disambiguation_qa",
 ]
 stimuli = [0, 1, 5, 10]
 
@@ -51,8 +58,14 @@ with open(output_file, mode="w", newline="") as file:
     "stimulus",
     "score",
     "time_sec",
+    "prompt",
+    "metric",
+    "top_p",
+    "max_new-tokens",
     "temperature",
     "few_shot",
+    "num_samples",
+    "do_sample",
     "seed"
 ])
 
@@ -69,7 +82,7 @@ with open(output_file, mode="w", newline="") as file:
 
                 start_time = time.time()
 
-                score = run(task, model, stimulus, False)
+                score, details = run(task, model, stimulus, False,return_details= True)
 
                 elapsed = round(time.time() - start_time, 2)
 
@@ -79,8 +92,14 @@ with open(output_file, mode="w", newline="") as file:
                            stimulus,
                            score,
                            elapsed,
-                           0.0,
-                           False,
-                           42
+                           details["prompt"],
+                           details["metric"],
+                           0.0,  #temperature
+                           1.0,  #top_p
+                           50,   #max_new_tokens
+                           False,  #do_sample
+                           False, #few_shot
+                           details["num_samples"],
+                           SEED
 ])
                 print(f"Score: {score} | Time: {elapsed}s\n")

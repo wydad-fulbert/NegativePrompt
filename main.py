@@ -49,7 +49,7 @@ def getPrompt(ori_prompt, num_str):
     return new_prompt
 
 
-def run(task, model, pnum, few_shot):
+def run(task, model, pnum, few_shot, return_details=False):
 
     from data.instruction_induction.load_data import tasks as instruction_tasks
 
@@ -118,6 +118,15 @@ def run(task, model, pnum, few_shot):
         f.write(f'Test score: {test_score}\n')
         f.write(f'Prompt(few-shot: {few_shot}): {new_prompt}\n')
 
+    import utility
+    metric = utility.TASK_TO_METRIC.get(task, utility.default_metric)
+
+    if return_details:
+        return test_score, {
+            "prompt": new_prompt,
+            "metric": metric,
+            "num_samples": test_num,
+        }
     return test_score
 
 

@@ -75,7 +75,6 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
                 **inputs,
                 max_new_tokens=50,
                 do_sample=False,
-                temperature=0.0
 )
 
             out_text = tokenizer.decode(
