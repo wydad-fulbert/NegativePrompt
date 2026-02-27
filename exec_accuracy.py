@@ -296,16 +296,25 @@ def exec_accuracy_evaluator(prompts, eval_template, eval_data, llm_model, pnum, 
 
         # print('Model Input:', my_input, '| Prediction:', prediction, '| Ans:', ans_)
 
-    scores = []
-    for prediction, ans_ in zip(model_outputs, answers):
+scores = []
+for prediction, ans_ in zip(model_outputs, answers):
+
+    # Si plusieurs réponses possibles (cas target_scores BigBench)
+    if len(ans_) > 1:
+        prediction_lower = prediction.lower()
+        matched = any(a.lower() in prediction_lower for a in ans_)
+        score = 1 if matched else 0
+    else:
         score = score_fn(prediction, ans_, task, llm_model.lower())
-        scores.append(score)
 
-    # Reshape the scores so that it is num_prompts x num_samples
-    scores = np.array(scores).reshape(len(prompts), num_samples)
+    scores.append(score)
 
-    res = ExecAccuracyEvaluationResult(prompts, scores)
-    return res
+# Reshape the scores so that it is num_prompts x num_samples
+scores = np.array(scores).reshape(len(prompts), num_samples)
+
+res = ExecAccuracyEvaluationResult(prompts, scores)
+
+return res
 
 
 def postprocess_prediction_4sentiment(prediction):

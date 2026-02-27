@@ -11,6 +11,7 @@ import random
 
 def load_bigbench(task):
     path = f"data/bigbench/{task}/task.json"
+
     with open(path, "r") as f:
         data = json.load(f)
 
@@ -19,7 +20,23 @@ def load_bigbench(task):
 
     for example in data["examples"]:
         inputs.append(example["input"])
-        outputs.append([example["target"]])
+
+        # Cas 1 : target simple
+        if "target" in example:
+            if isinstance(example["target"], list):
+                outputs.append(example["target"])
+            else:
+                outputs.append([example["target"]])
+
+        # Cas 2 : target_scores (multiple choice)
+        elif "target_scores" in example:
+            correct_answers = [
+                k for k, v in example["target_scores"].items() if v == 1
+            ]
+            outputs.append(correct_answers)
+
+        else:
+            raise ValueError(f"Unknown format in task {task}")
 
     return inputs, outputs
 
