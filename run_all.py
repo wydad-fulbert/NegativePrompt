@@ -21,7 +21,7 @@ if torch.cuda.is_available():
 # CONFIGURATION
 # ==============================
 
-models = ["llama2"]
+models = ["vicuna"]
 
 # 
 tasks_list = ["sentiment"]
