@@ -73,40 +73,4 @@ with open(output_file, mode="w", newline="") as file:
 
                 elapsed = round(time.time() - start_time, 2)
 
-                writer.writerow([
-                           model,
-                           task,
-                           stimulus,
-                           score,
-                           elapsed,
-                           details["prompt"],
-                           details["metric"],
-                           "exec_accuracy_evaluator",
-                           0.0,  #temperature
-                           1.0,  #top_p
-                           50,   #max_new_tokens
-                           False,  #do_sample
-                           False, #few_shot
-                           details["num_samples"],
-                           SEED
-])
                 print(f"Score: {score} | Time: {elapsed}s\n")
-
-
-
-writer.writerow([
-    model,
-    task,
-    stimulus,
-    score,
-    elapsed,
-    details["prompt"],
-    details["metric"],
-    0.0,      # temperature
-    1.0,      # top_p
-    50,       # max_new_tokens
-    False,    # do_sample
-    False,    # few_shot
-    details["num_samples"],
-    SEED,
-])
