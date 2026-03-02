@@ -21,11 +21,25 @@ if torch.cuda.is_available():
 # CONFIGURATION
 # ==============================
 
-models = ["vicuna"]
+models = ["t5","llama2","vicuna"]
 
 # 
-tasks_list = ["sentiment"]
-stimuli = [0]
+tasks_list = [
+    # Instruction Induction (5)
+    "sentiment",
+    "translation_en-fr",
+    "word_in_context",
+    "active_to_passive",
+    "negation",
+
+    # BigBench (5)
+    "dyck_languages",
+    "object_counting",
+    "ruin_names",
+    "word_sorting",
+    "disambiguation_qa",
+]
+stimuli = [0,1,5,10]
 
 output_file = "results_phase2.csv"
 

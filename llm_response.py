@@ -77,6 +77,12 @@ def locate_ans(query, output):
     
 api_num = 5
 
+# ====== GENERATION CONFIG (PROTOCOLE) ======
+MAX_NEW_TOKENS = 50
+DO_SAMPLE = False          # protocole baseline (greedy)
+TEMPERATURE = 0.0
+TOP_P = 1.0
+
 
 def load_model(model_name):
 
@@ -122,7 +128,6 @@ def load_model(model_name):
 def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
 
     model_outputs = []
-
     tokenizer, model, model_type = load_model(llm_model)
 
     with torch.no_grad():
@@ -134,8 +139,8 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
 
                 outputs = model.generate(
                     **inputs,
-                    max_new_tokens=50,
-                    do_sample=False
+                    max_new_tokens=MAX_NEW_TOKENS,
+                    do_sample=DO_SAMPLE
                 )
 
                 out_text = tokenizer.decode(
@@ -145,25 +150,36 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
 
             # ===== Llama2 / Vicuna =====
             else:
-                inputs = tokenizer(q, return_tensors="pt", truncation=True)
+                inputs = tokenizer(
+                    q,
+                    return_tensors="pt",
+                    truncation=True,
+                    padding=False
+                )
                 inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
-                outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=50,
-                    do_sample=False,
-                    pad_token_id=tokenizer.eos_token_id
-                )
+                gen_kwargs = {
+                    "max_new_tokens": MAX_NEW_TOKENS,
+                    "do_sample": DO_SAMPLE,
+                    "pad_token_id": tokenizer.eos_token_id,
+                }
 
-                # ⚠️ On enlève le prompt
+                # temperature/top_p uniquement si on sample
+                if DO_SAMPLE:
+                   gen_kwargs["temperature"] = TEMPERATURE
+                   gen_kwargs["top_p"] = TOP_P
+
+                outputs = model.generate(**inputs, **gen_kwargs)
+
+                #  On enlève le prompt
                 prompt_len = inputs["input_ids"].shape[1]
                 gen_tokens = outputs[0][prompt_len:]
 
                 out_text = tokenizer.decode(
-                    gen_tokens,
+                    gen_tokens, 
                     skip_special_tokens=True
                 ).strip()
 
             model_outputs.append(out_text)
 
-    return model_outputs
+        return model_outputs
