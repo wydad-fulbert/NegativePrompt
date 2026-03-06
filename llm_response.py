@@ -1,21 +1,26 @@
 import time
 import re
 import requests
+import os 
 
 
 import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
-from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-from kaggle_secrets import UserSecretsClient
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfigt
 from huggingface_hub import login
+
 
 # ===== HF LOGIN (KAGGLE) =====
 try:
+    from kaggle_secrets import UserSecretsClient
     token = UserSecretsClient().get_secret("HF_TOKEN")
-    if token:
-        login(token=token)
+    login (token = token)
+    
 except:
-    pass
+    token = os.environ.get("HF_TOKEN")
+    if token : 
+        login(token = token)
+
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -114,6 +119,7 @@ def load_model(model_name):
         quantization_config=bnb_config,
         device_map="auto",
         torch_dtype=torch.float16,
+        low_cpu_mem_usage = True
     )
 
     model.eval()
