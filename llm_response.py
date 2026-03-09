@@ -149,7 +149,9 @@ def load_model(model_name):
     )
 
     model.eval()
-
+    if hasattr(model , "generation_config") and model.generation_config is not None:
+        model.generation_config.max_length = None
+    
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
