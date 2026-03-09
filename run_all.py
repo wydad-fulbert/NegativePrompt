@@ -5,7 +5,9 @@ import numpy as np
 import torch
 import csv
 import time
+import os 
 
+file_exists = os.path.exists(output_file)and os.path.getsize(output_file) > 0
 
 # ==============================
 # SEED FIXE
@@ -50,7 +52,7 @@ output_file = "results_phase2.csv"
 total_runs = len(models) * len(tasks_list) * len(stimuli)
 current_run = 0
 
-with open(output_file, mode="w", newline="") as file:
+with open(output_file, mode="a", newline="") as file:
     writer = csv.writer(file)
     writer.writerow([
     "model",

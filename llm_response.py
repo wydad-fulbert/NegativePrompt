@@ -3,6 +3,7 @@ import gc
 import time
 import re
 import requests
+import os 
 
 
 import torch
@@ -14,8 +15,8 @@ import os
 try:
     from kaggle_secrets import UserSecretsClient
     token = UserSecretsClient().get_secret("HF_TOKEN")
-    if token:
-        login(token=token)
+    login (token = token)
+    
 except:
     token = os.environ.get("HF_TOKEN")
     if token : 
