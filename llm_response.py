@@ -1,3 +1,5 @@
+
+import gc
 import time
 import re
 import requests
@@ -6,16 +8,19 @@ import requests
 import torch
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
-from kaggle_secrets import UserSecretsClient
 from huggingface_hub import login
-
+import os 
 # ===== HF LOGIN (KAGGLE) =====
 try:
+    from kaggle_secrets import UserSecretsClient
     token = UserSecretsClient().get_secret("HF_TOKEN")
     if token:
         login(token=token)
 except:
-    pass
+    token = os.environ.get("HF_TOKEN")
+    if token : 
+        login(token=token)
+    
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -27,6 +32,7 @@ MODEL_IDS = {
 }
 
 _MODEL_CACHE = {}
+_CURRENT_MODEL_NAME = None
 
 def get_match_items(items, str):
     match_time = 0
@@ -84,10 +90,33 @@ TEMPERATURE = 0.0
 TOP_P = 1.0
 
 
+def clear_gpu():
+    global _MODEL_CACHE
+    for _, v in _MODEL_CACHE.items():
+        try:
+            tok, mdl, _ = v
+            del tok
+            del mdl
+        except:
+            pass
+    _MODEL_CACHE = {}
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
 def load_model(model_name):
+    global _CURRENT_MODEL_NAME
+
+# Si on change de modèle (ex: llama2 -> vicuna), on purge la VRAM
+    if _CURRENT_MODEL_NAME is not None and model_name != _CURRENT_MODEL_NAME:
+       clear_gpu()
+
+    _CURRENT_MODEL_NAME = model_name
 
     if model_name in _MODEL_CACHE:
         return _MODEL_CACHE[model_name]
+
 
     model_id = MODEL_IDS[model_name]
 
@@ -96,6 +125,7 @@ def load_model(model_name):
         tokenizer = T5Tokenizer.from_pretrained(model_id)
         model = T5ForConditionalGeneration.from_pretrained(model_id).to(device)
         model.eval()
+        torch.set_grad_enabled(False)
         _MODEL_CACHE[model_name] = (tokenizer, model, "t5")
         return _MODEL_CACHE[model_name]
 
@@ -114,6 +144,7 @@ def load_model(model_name):
         quantization_config=bnb_config,
         device_map="auto",
         torch_dtype=torch.float16,
+        low_cpu_mem_usage= True
     )
 
     model.eval()
@@ -140,7 +171,7 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
                 outputs = model.generate(
                     **inputs,
                     max_new_tokens=MAX_NEW_TOKENS,
-                    do_sample=DO_SAMPLE
+                    
                 )
 
                 out_text = tokenizer.decode(
@@ -162,6 +193,8 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
                     "max_new_tokens": MAX_NEW_TOKENS,
                     "do_sample": DO_SAMPLE,
                     "pad_token_id": tokenizer.eos_token_id,
+                    "eos_token_id" : tokenizer.eos_token_id,
+                    "use_cache" : True
                 }
 
                 # temperature/top_p uniquement si on sample
@@ -182,4 +215,4 @@ def get_response_from_llm(llm_model, queries, task, few_shot, api_num=4):
 
             model_outputs.append(out_text)
 
-        return model_outputs
+    return model_outputs
