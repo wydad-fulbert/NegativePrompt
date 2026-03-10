@@ -103,3 +103,14 @@ with open(output_file, mode="a", newline="") as file:
                 ])
 
                 file.flush()
+
+import os
+
+print("Uploading results to GitHub...")
+
+os.system("git config --global user.email 'ton_email_github'")
+os.system("git config --global user.name 'ton_username_github'")
+
+os.system("git add results_t5.csv")
+os.system("git commit -m 'Add results_t5'")
+os.system("git push")
