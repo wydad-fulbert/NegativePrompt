@@ -101,7 +101,7 @@ for model in models:
             examples = data["examples"][:num_samples]
 
             inputs = [e["input"] for e in examples]
-            outputs = [e.get["target",e.get("answer")] for e in examples]
+            outputs = [e.get("target",e.get("answer")) for e in examples]
 
         else:
 
