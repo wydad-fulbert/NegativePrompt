@@ -7,9 +7,21 @@ import string
 
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
-from data.instruction_induction.load_data import load_data
+from data.instruction_induction.load_data import load_data as load_instruction_data
+from data.bigbench.load_data import load_data as load_bigbench_data
 from config import PROMPT_SET, Negative_SET
 from llm_response import get_response_from_llm
+
+def load_task_data(task):
+    instruction_tasks = ["translation_en-fr", "active_to_passive"]
+    bigbench_tasks = ["ruin_names"]
+
+    if task in instruction_tasks:
+        return load_instruction_data("eval", task)
+    elif task in bigbench_tasks:
+        return load_bigbench_data("eval", task)
+    else:
+        raise ValueError(f"Tâche non gérée : {task}")
 
 # =========================
 # SEED
@@ -80,7 +92,7 @@ for model in models:
     for task in tasks_list:
         print(f"\n===== TASK: {task} =====")
 
-        test_data = load_data("eval", task)
+        test_data = load_task_data(task)
         inputs = test_data[0][:num_samples]
         outputs = test_data[1][:num_samples]
 
