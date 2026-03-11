@@ -4,6 +4,7 @@ import pandas as pd
 import torch
 import re
 import string
+import json
 
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
@@ -92,9 +93,23 @@ for model in models:
     for task in tasks_list:
         print(f"\n===== TASK: {task} =====")
 
-        test_data = load_task_data(task)
-        inputs = test_data[0][:num_samples]
-        outputs = test_data[1][:num_samples]
+        if task == "ruin_names":
+            path = f"data/bigbench/ruin_names/task.json"
+            
+            with open(path, "r") as f:
+                data = json.load(f)
+
+            examples = data["examples"][:num_samples]
+
+            inputs = [e["input"] for e in examples]
+            outputs = [e["target"] for e in examples]
+
+        else:
+
+            test_data = load_instruction_data("eval", task)
+
+            inputs = test_data[0][:num_samples]
+            outputs = test_data[1][:num_samples]
 
         references = []
         for out in outputs:
