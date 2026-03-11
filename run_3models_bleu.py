@@ -9,7 +9,6 @@ import json
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 
 from data.instruction_induction.load_data import load_data as load_instruction_data
-from data.bigbench.load_data import load_data as load_bigbench_data
 from config import PROMPT_SET, Negative_SET
 from llm_response import get_response_from_llm
 
@@ -94,7 +93,7 @@ for model in models:
         print(f"\n===== TASK: {task} =====")
 
         if task == "ruin_names":
-            path = f"data/bigbench/ruin_names/task.json"
+            path = "data/bigbench/ruin_names/task.json"
             
             with open(path, "r") as f:
                 data = json.load(f)
