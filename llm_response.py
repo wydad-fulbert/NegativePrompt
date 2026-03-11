@@ -11,18 +11,10 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from huggingface_hub import login
 import os 
 # ===== HF LOGIN (KAGGLE) =====
-try:
-    from kaggle_secrets import UserSecretsClient
-    token = UserSecretsClient().get_secret("HF_TOKEN")
-    
-except:
-    pass 
-
-if token is None : 
-    token = os.environ.get("HF_TOKEN")
+token = os.environ.get("HF_TOKEN")
 
 if token : 
-        login(token=token)
+    login(token=token)
     
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
