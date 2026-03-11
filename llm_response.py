@@ -19,7 +19,7 @@ except:
     pass 
 
 if token is None : 
-    toekn = os.environ.get("HF_TOKEN")
+    token = os.environ.get("HF_TOKEN")
 
 if token : 
         login(token=token)
