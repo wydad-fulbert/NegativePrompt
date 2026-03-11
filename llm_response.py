@@ -1,4 +1,4 @@
-
+### TOKEN HUGGINGFACE = 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
 import gc
 import time
 import re
@@ -15,11 +15,14 @@ import os
 try:
     from kaggle_secrets import UserSecretsClient
     token = UserSecretsClient().get_secret("HF_TOKEN")
-    login (token = token)
     
 except:
-    token = os.environ.get("HF_TOKEN")
-    if token : 
+    pass 
+
+if token is None : 
+    toekn = os.environ.get("HF_TOEKEN")
+
+if token : 
         login(token=token)
     
 
