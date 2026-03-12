@@ -49,7 +49,7 @@ def getPrompt(ori_prompt, num_str):
     return new_prompt
 
 
-def run(task, model, pnum, few_shot, return_details=False):
+def run(task, model, pnum, few_shot, return_details=False, custom_prefix=""):
 
     from data.instruction_induction.load_data import tasks as instruction_tasks
 
@@ -83,6 +83,7 @@ def run(task, model, pnum, few_shot, return_details=False):
     eval_template = template.EvalTemplate(eval_template)
 
     new_prompt = getPrompt(origin_prompt, pnum)
+    new_prompt = custom_prefix + new_prompt
 
     test_num = min(100, len(test_data[0]))
 

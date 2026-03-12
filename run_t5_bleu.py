@@ -23,11 +23,11 @@ if torch.cuda.is_available():
 # =========================
 # CONFIG
 # =========================
-MODEL = "t5"
-TASKS = ["translation_en-fr", "active_to_passive"]
+MODEL = ["t5","llama2","vicuna"]
+TASKS = ["translation_en-fr", "active_to_passive","ruin_names"]
 STIMULI = [0, 1, 5, 10]
 NUM_SAMPLES = 100
-OUTPUT_FILE = "results_t5_bleu_detailed.csv"
+OUTPUT_FILE = "results_t5_bleu_3models.csv"
 
 # =========================
 # HELPERS
