@@ -44,19 +44,15 @@ conditions = [
 
 output_file = "results_controls_all_models.csv"
 
-file_exists = os.path.exists(output_file)
-
-with open(output_file, mode="a", newline="") as file:
-
+with open(output_file, mode="w", newline="") as file:
     writer = csv.writer(file)
 
-    if not file_exists:
-        writer.writerow([
-            "model",
-            "task",
-            "condition",
-            "score"
-        ])
+    writer.writerow([
+        "model",
+        "task",
+        "condition",
+        "score"
+    ])
 
     for model in models:
 
