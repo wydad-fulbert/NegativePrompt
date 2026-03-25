@@ -58,7 +58,6 @@ for task in TASKS:
         train_inputs, train_outputs = train_data
         eval_inputs, eval_outputs = eval_data
 
-        # train = induce, val/test = eval split
         val_inputs = eval_inputs[:30]
         val_outputs = eval_outputs[:30]
 
@@ -127,15 +126,15 @@ for task in TASKS:
                 "answers": out if isinstance(out, list) else [out]
             })
 
-with open("lora_train.jsonl", "w", encoding="utf-8") as f:
+with open("/kaggle/working/lora_train.jsonl", "w", encoding="utf-8") as f:
     for row in train_rows:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
-with open("lora_val.jsonl", "w", encoding="utf-8") as f:
+with open("/kaggle/working/lora_val.jsonl", "w", encoding="utf-8") as f:
     for row in val_rows:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
-with open("lora_test.jsonl", "w", encoding="utf-8") as f:
+with open("/kaggle/working/lora_test.jsonl", "w", encoding="utf-8") as f:
     for row in test_rows:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
 

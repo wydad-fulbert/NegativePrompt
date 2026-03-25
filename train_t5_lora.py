@@ -1,19 +1,26 @@
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, DataCollatorForSeq2Seq, Seq2SeqTrainer, Seq2SeqTrainingArguments
+from transformers import (
+    AutoTokenizer,
+    AutoModelForSeq2SeqLM,
+    DataCollatorForSeq2Seq,
+    Seq2SeqTrainer,
+    Seq2SeqTrainingArguments
+)
 from peft import LoraConfig, get_peft_model, TaskType
 import torch
 
-MODEL_NAME = "google/flan-t5-large"   # si OOM, remplace par "google/flan-t5-base"
-OUTPUT_DIR = "t5_lora_np_robust"
+MODEL_NAME = "google/flan-t5-base"
+OUTPUT_DIR = "/kaggle/working/t5_lora_np_robust"
 
-MAX_INPUT = 256
-MAX_TARGET = 64
+MAX_INPUT = 192
+MAX_TARGET = 32
 
 dataset = load_dataset("json", data_files={
-    "train": "lora_train.jsonl",
+    "train": "/kaggle/working/lora_train.jsonl",
 })
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+
 model = AutoModelForSeq2SeqLM.from_pretrained(
     MODEL_NAME,
     torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
@@ -35,31 +42,40 @@ def preprocess(examples):
         examples["source"],
         max_length=MAX_INPUT,
         truncation=True,
-        padding="max_length"
+        padding=False
     )
     labels = tokenizer(
         text_target=examples["target"],
         max_length=MAX_TARGET,
         truncation=True,
-        padding="max_length"
+        padding=False
     )
     model_inputs["labels"] = labels["input_ids"]
     return model_inputs
 
-tokenized = dataset.map(preprocess, batched=True, remove_columns=dataset["train"].column_names)
+tokenized = dataset.map(
+    preprocess,
+    batched=True,
+    remove_columns=dataset["train"].column_names
+)
 
-data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer, model=model)
+data_collator = DataCollatorForSeq2Seq(
+    tokenizer=tokenizer,
+    model=model,
+    padding="longest"
+)
 
 args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=1,
-    gradient_accumulation_steps=8,
+    per_device_train_batch_size=8,
+    gradient_accumulation_steps=2,
     learning_rate=2e-4,
-    num_train_epochs=2,
-    logging_steps=20,
+    num_train_epochs=1,
+    logging_steps=50,
     save_strategy="epoch",
     fp16=torch.cuda.is_available(),
-    report_to="none"
+    report_to="none",
+    dataloader_num_workers=2
 )
 
 trainer = Seq2SeqTrainer(
