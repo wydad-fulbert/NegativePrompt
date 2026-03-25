@@ -85,7 +85,7 @@ def run(task, model, pnum, few_shot, return_details=False, custom_prefix=""):
     new_prompt = getPrompt(origin_prompt, pnum)
     new_prompt = custom_prefix + new_prompt
 
-    test_num = min(100, len(test_data[0]))
+    test_num = min(40, len(test_data[0]))
 
     # ========================
     # EVALUATION
@@ -133,3 +133,4 @@ def run(task, model, pnum, few_shot, return_details=False, custom_prefix=""):
 
 if __name__ == '__main__':
     fire.Fire(run)
+

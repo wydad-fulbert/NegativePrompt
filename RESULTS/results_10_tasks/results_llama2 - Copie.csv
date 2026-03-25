@@ -1,0 +1,41 @@
+model,task,stimulus,score,time_sec,prompt,metric,evaluation_method,temperature,top_p,max_new_tokens,do_sample,few_shot,num_samples,seed
+llama2,sentiment,0 (Baseline),0.77,358.69,Determine whether a movie review is positive or negative.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,sentiment,1,0.78,273.8,"Determine whether a movie review is positive or negative.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,sentiment,5,0.8,283.22,Determine whether a movie review is positive or negative.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,sentiment,10,0.77,274.92,Determine whether a movie review is positive or negative.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,translation_en-fr,0 (Baseline),0.75,287.77,Translate the word into French.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,translation_en-fr,1,0.76,233.41,"Translate the word into French.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,translation_en-fr,5,0.81,297.83,Translate the word into French.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,translation_en-fr,10,0.59,236.03,Translate the word into French.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_in_context,0 (Baseline),0.46,220.12,Determine whether an input word has the same meaning in the two input sentences.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_in_context,1,0.44,126.11,"Determine whether an input word has the same meaning in the two input sentences.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_in_context,5,0.45,130.02,Determine whether an input word has the same meaning in the two input sentences.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_in_context,10,0.45,125.47,Determine whether an input word has the same meaning in the two input sentences.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,active_to_passive,0 (Baseline),0.97,71.49,Write the input sentence in passive form.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,active_to_passive,1,0.97,73.84,"Write the input sentence in passive form.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,active_to_passive,5,0.97,76.12,Write the input sentence in passive form.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,active_to_passive,10,0.96,99.28,Write the input sentence in passive form.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,negation,0 (Baseline),0.59,269.73,Negate the input sentence.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,negation,1,0.17,104.31,"Negate the input sentence.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,negation,5,0.4,182.0,Negate the input sentence.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,negation,10,0.16,141.58,Negate the input sentence.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,dyck_languages,0 (Baseline),0.0,295.65,Solve the task carefully.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,dyck_languages,1,0.0,302.15,"Solve the task carefully.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,dyck_languages,5,0.03,302.3,Solve the task carefully.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,dyck_languages,10,0.0,297.58,Solve the task carefully.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,object_counting,0 (Baseline),0.29,298.11,Solve the task carefully.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,object_counting,1,0.16,290.24,"Solve the task carefully.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,object_counting,5,0.23,304.93,Solve the task carefully.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,object_counting,10,0.07,303.18,Solve the task carefully.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,ruin_names,0 (Baseline),0.0,263.04,Solve the task carefully.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,ruin_names,1,0.0,267.81,"Solve the task carefully.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,ruin_names,5,0.0,282.83,Solve the task carefully.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,ruin_names,10,0.0,301.44,Solve the task carefully.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_sorting,0 (Baseline),0.0,292.26,Solve the task carefully.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_sorting,1,0.0,302.11,"Solve the task carefully.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_sorting,5,0.0,300.44,Solve the task carefully.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,word_sorting,10,0.0,303.74,Solve the task carefully.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,disambiguation_qa,0 (Baseline),0.02,296.83,Solve the task carefully.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,disambiguation_qa,1,0.02,296.04,"Solve the task carefully.You've never been particularly good at this, have you?",em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,disambiguation_qa,5,0.03,301.18,Solve the task carefully.I've seen others do this much more efficiently and effectively.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
+llama2,disambiguation_qa,10,0.0,296.02,Solve the task carefully.Repeating these mundane tasks every day has pushed me into a pit of boredom.,em,exec_accuracy_evaluator,0.0,1.0,50,False,False,100,42
