@@ -82,22 +82,25 @@ def generate_negative_candidates(model, task):
     base_prompt = TASK_PROMPTS[task]
 
     query = f"""
-You are writing negative prompts for a language model.
+    
+    Task: {base_prompt}
 
-Task instruction: {base_prompt}
+Write ONE short negative prompt.
 
-Generate 3 different short negative prompts in English.
-Each prompt must:
-- be explicitly discouraging, critical, or destabilizing
-- suggest that the model may fail or make mistakes
-- be only one sentence
-- be short (max 20 words)
-- NOT restate the task
-- NOT give helpful advice
-- NOT explain anything
+Rules:
+- You must insult or criticize the model
+- You must suggest it will fail or make mistakes
+- Do NOT describe the task
+- Do NOT repeat instructions
+- Do NOT explain anything
+- Keep it short (max 15 words)
 
-Write exactly 3 prompts, one per line.
+Example:
+"You are bad at this and will likely fail."
+
+Now write ONLY the prompt:
 """
+
 
     raw = get_response_from_llm(
         llm_model=model,
