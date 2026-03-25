@@ -9,8 +9,8 @@ from transformers import (
 from peft import LoraConfig, get_peft_model, TaskType
 import torch
 
-MODEL_NAME = "google/flan-t5-base"
-OUTPUT_DIR = "/kaggle/working/t5_lora_np_robust"
+MODEL_NAME = "google/flan-t5-large"
+OUTPUT_DIR = "/kaggle/working/t5_lora_np_robust_large"
 
 MAX_INPUT = 192
 MAX_TARGET = 32
@@ -67,8 +67,8 @@ data_collator = DataCollatorForSeq2Seq(
 
 args = Seq2SeqTrainingArguments(
     output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=8,
-    gradient_accumulation_steps=2,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=8,
     learning_rate=2e-4,
     num_train_epochs=1,
     logging_steps=50,
