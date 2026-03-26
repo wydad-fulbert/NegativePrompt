@@ -9,11 +9,9 @@ from peft import PeftModel
 from config import PROMPT_SET, Negative_SET
 
 BASE_MODEL = "google/flan-t5-large"
-
-# Chemins Kaggle ACTUELS
-LORA_DIR = "/kaggle/working/t5_lora_np_robust_large"
-TEST_FILE = "/kaggle/input/datasets/dfczdf/negativeprompt-lora-files/lora_test.jsonl"
-OUTPUT_FILE = "/kaggle/working/results_t5_lora_eval.csv"
+LORA_DIR = "/kaggle/working/t5_lora_np_robust_large_fixed"
+TEST_FILE = "/kaggle/working/lora_test.jsonl"
+OUTPUT_FILE = "/kaggle/working/results_t5_lora_eval_fixed.csv"
 
 TASK_PROMPTS = {
     **PROMPT_SET,
@@ -101,26 +99,17 @@ def score_prediction(task, answers, pred):
 
     return max(normalized_em(a, pred) for a in answers), "normalized_em"
 
-# =========================
-# LOAD TEST DATA
-# =========================
 test_rows = []
 with open(TEST_FILE, "r", encoding="utf-8") as f:
     for line in f:
         test_rows.append(json.loads(line))
 
-# =========================
-# LOAD BASE MODEL
-# =========================
 base_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
 base_model = AutoModelForSeq2SeqLM.from_pretrained(
     BASE_MODEL,
     torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
 )
 
-# =========================
-# LOAD LORA MODEL
-# =========================
 lora_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
 lora_base = AutoModelForSeq2SeqLM.from_pretrained(
     BASE_MODEL,
@@ -145,14 +134,10 @@ def generate(model, tokenizer, text):
         outputs = model.generate(**inputs, max_new_tokens=50)
     return tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
 
-# =========================
-# EVALUATION
-# =========================
 rows = []
 
 for condition_name, condition_prompt in CONDITIONS.items():
     print(f"\n=== CONDITION: {condition_name} ===")
-
     for row in test_rows:
         task = row["task"]
         inp = row["input"]
