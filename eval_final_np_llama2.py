@@ -116,7 +116,8 @@ def generate(text):
         outputs = model.generate(
             **inputs,
             max_new_tokens=30,
-            do_sample=False
+            do_sample=False,
+            max_length=None
         )
 
     return tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
