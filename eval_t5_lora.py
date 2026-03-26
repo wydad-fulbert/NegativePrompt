@@ -1,7 +1,6 @@
 import json
 import re
 import string
-import numpy as np
 import pandas as pd
 import torch
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
@@ -10,7 +9,10 @@ from peft import PeftModel
 from config import PROMPT_SET, Negative_SET
 
 BASE_MODEL = "google/flan-t5-large"
-LORA_DIR = "/kaggle/working/t5_lora_np_robust_large"
+
+# Chemins Kaggle ACTUELS
+LORA_DIR = "/kaggle/input/datasets/dfczdf/negativeprompt-lora-files/model"
+TEST_FILE = "/kaggle/working/lora_test.jsonl"
 OUTPUT_FILE = "/kaggle/working/results_t5_lora_eval.csv"
 
 TASK_PROMPTS = {
@@ -103,7 +105,7 @@ def score_prediction(task, answers, pred):
 # LOAD TEST DATA
 # =========================
 test_rows = []
-with open("/kaggle/working/lora_test.jsonl", "r", encoding="utf-8") as f:
+with open(TEST_FILE, "r", encoding="utf-8") as f:
     for line in f:
         test_rows.append(json.loads(line))
 
