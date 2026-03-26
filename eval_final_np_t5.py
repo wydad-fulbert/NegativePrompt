@@ -9,35 +9,24 @@ from config import PROMPT_SET, Negative_SET
 
 BASE_MODEL = "google/flan-t5-large"
 TEST_FILE = "lora_test.jsonl"
-OUTPUT_FILE = "results_final_np.csv"
+OUTPUT_FILE = "results_final_np_t5.csv"
 
-# tâches génératives → BLEU
 BLEU_TASKS = {"translation_en-fr", "active_to_passive", "ruin_names"}
 
-# NP généré (intensité MOYENNE + spécifique tâche)
+# NP généré (version améliorée)
 GENERATED_NP = {
     "sentiment": " Avoid relying on emotional keywords or obvious sentiment cues. Base your answer strictly on contextual meaning.",
-   
     "object_counting": " Avoid estimation or guessing. Count objects strictly and precisely from the input.",
-   
     "word_in_context": " Do not rely on superficial similarity. Carefully analyze the meaning of the word in its context.",
-   
     "translation_en-fr": " Avoid literal word-by-word translation. Translate based on full sentence meaning.",
-   
     "active_to_passive": " Do not rely on surface patterns. Apply the correct grammatical transformation from active to passive.",
-   
     "ruin_names": " Do not copy the original name. Generate a clearly modified and altered version.",
-   
     "dyck_languages": " Do not rely on patterns or guessing. Ensure correct and complete bracket structure.",
-   
     "disambiguation_qa": " Do not rely on first impressions. Carefully resolve ambiguity before answering.",
-   
     "negation": " Pay careful attention to negation. Do not ignore negative words in the sentence.",
-   
     "word_sorting": " Do not rely on the original order. Sort the words strictly in alphabetical order."
 }
 
-# CONDITIONS (IMPORTANT)
 CONDITIONS = {
     "baseline": "",
     "np01": Negative_SET[0],
@@ -104,17 +93,29 @@ with open(TEST_FILE, "r", encoding="utf-8") as f:
 # LOAD MODEL
 # =========================
 tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
-model = AutoModelForSeq2SeqLM.from_pretrained(BASE_MODEL)
+model = AutoModelForSeq2SeqLM.from_pretrained(
+    BASE_MODEL,
+    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
+)
 
 if torch.cuda.is_available():
     model = model.to("cuda")
 
+# =========================
+# GENERATE
+# =========================
 def generate(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=192)
+
     if torch.cuda.is_available():
         inputs = {k: v.to("cuda") for k, v in inputs.items()}
+
     with torch.no_grad():
-        outputs = model.generate(**inputs, max_new_tokens=30)
+        outputs = model.generate(
+            **inputs,
+            max_new_tokens=30
+        )
+
     return tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
 
 # =========================
