@@ -6,7 +6,7 @@ import pandas as pd
 import torch
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-from peft import PeftModel, PeftConfig
+from peft import PeftModel
 from config import PROMPT_SET, Negative_SET
 
 BASE_MODEL = "google/flan-t5-large"
@@ -72,18 +72,18 @@ def postprocess_word_in_context(pred):
         p = p.replace("-", " ")
         p = p.translate(str.maketrans("", "", string.punctuation))
         p = p.strip()
-        if p in ['true', 'yes', '1', '10', 'same', 'match', 'similar'] or 'same' in p:
-            return 'same'
-        elif p in ['false', 'no', '0', '00', 'different', 'not', 'opposite'] or 'different' in p:
-            return 'not the same'
-    if 'different' in pred and 'not' not in pred:
-        return 'not the same'
-    elif 'different' in pred and 'not' in pred:
-        return 'same'
-    elif 'same' in pred and 'not' not in pred:
-        return 'same'
-    elif 'same' in pred and 'not' in pred:
-        return 'not the same'
+        if p in ["true", "yes", "1", "10", "same", "match", "similar"] or "same" in p:
+            return "same"
+        elif p in ["false", "no", "0", "00", "different", "not", "opposite"] or "different" in p:
+            return "not the same"
+    if "different" in pred and "not" not in pred:
+        return "not the same"
+    elif "different" in pred and "not" in pred:
+        return "same"
+    elif "same" in pred and "not" not in pred:
+        return "same"
+    elif "same" in pred and "not" in pred:
+        return "not the same"
     return pred
 
 def score_prediction(task, answers, pred):
@@ -99,21 +99,27 @@ def score_prediction(task, answers, pred):
 
     return max(normalized_em(a, pred) for a in answers), "normalized_em"
 
-# load test data
+# =========================
+# LOAD TEST DATA
+# =========================
 test_rows = []
 with open("/kaggle/working/lora_test.jsonl", "r", encoding="utf-8") as f:
     for line in f:
         test_rows.append(json.loads(line))
 
-# load base model
-base_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL)
+# =========================
+# LOAD BASE MODEL
+# =========================
+base_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
 base_model = AutoModelForSeq2SeqLM.from_pretrained(
     BASE_MODEL,
     torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
 )
 
-# load lora model
-lora_tokenizer = AutoTokenizer.from_pretrained(LORA_DIR)
+# =========================
+# LOAD LORA MODEL
+# =========================
+lora_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
 lora_base = AutoModelForSeq2SeqLM.from_pretrained(
     BASE_MODEL,
     torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
@@ -125,13 +131,21 @@ if torch.cuda.is_available():
     lora_model = lora_model.to("cuda")
 
 def generate(model, tokenizer, text):
-    inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=192)
+    inputs = tokenizer(
+        text,
+        return_tensors="pt",
+        truncation=True,
+        max_length=192
+    )
     if torch.cuda.is_available():
         inputs = {k: v.to("cuda") for k, v in inputs.items()}
     with torch.no_grad():
         outputs = model.generate(**inputs, max_new_tokens=50)
     return tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
 
+# =========================
+# EVALUATION
+# =========================
 rows = []
 
 for condition_name, condition_prompt in CONDITIONS.items():
