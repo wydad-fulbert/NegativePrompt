@@ -16,7 +16,7 @@ MAX_INPUT = 192
 MAX_TARGET = 32
 
 dataset = load_dataset("json", data_files={
-    "train": "/kaggle/working/lora_train.jsonl",
+    "train": "lora_train.jsonl",
 })
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)

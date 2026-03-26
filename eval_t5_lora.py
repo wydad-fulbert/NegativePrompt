@@ -9,9 +9,9 @@ from peft import PeftModel
 from config import PROMPT_SET, Negative_SET
 
 BASE_MODEL = "google/flan-t5-large"
-LORA_DIR = "/kaggle/working/t5_lora_np_robust_large_fixed"
-TEST_FILE = "/kaggle/working/lora_test.jsonl"
-OUTPUT_FILE = "/kaggle/working/results_t5_lora_eval_fixed.csv"
+LORA_DIR = "t5_lora_targeted"
+TEST_FILE = "lora_test_targeted.jsonl"
+OUTPUT_FILE = "results_t5_lora_eval_targeted.csv"
 
 TASK_PROMPTS = {
     **PROMPT_SET,
