@@ -11,8 +11,8 @@ from config import PROMPT_SET, Negative_SET
 BASE_MODEL = "google/flan-t5-large"
 
 # Chemins Kaggle ACTUELS
-LORA_DIR = "/kaggle/working/t5_lora_np_robust_large"
-TEST_FILE = "/kaggle/working/lora_test.jsonl"
+LORA_DIR = "/kaggle/input/datasets/dfczdf/negativeprompt-lora-files/model/kaggle/working/t5_lora_np_robust_large/checkpoint-3543/adapter_config.json"
+TEST_FILE = "/kaggle/input/datasets/dfczdf/negativeprompt-lora-files/lora_test.jsonl"
 OUTPUT_FILE = "/kaggle/working/results_t5_lora_eval.csv"
 
 TASK_PROMPTS = {
