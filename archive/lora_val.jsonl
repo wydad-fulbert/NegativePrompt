@@ -1,0 +1,300 @@
+{"task": "sentiment", "input": "...routine, harmless diversion and little else.", "answers": ["positive"]}
+{"task": "sentiment", "input": "An occasionally funny, but overall limp, fish-out-of-water story.", "answers": ["negative"]}
+{"task": "sentiment", "input": "Unflinchingly bleak and desperate", "answers": ["negative"]}
+{"task": "sentiment", "input": "A woman's pic directed with resonance by Ilya Chaiken.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A tender, heartfelt family drama.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Like Leon, it's frustrating and still oddly likable.", "answers": ["positive"]}
+{"task": "sentiment", "input": "The film's performances are thrilling.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A coarse and stupid gross-out.", "answers": ["negative"]}
+{"task": "sentiment", "input": "An overemphatic, would-be wacky, ultimately tedious sex farce.", "answers": ["negative"]}
+{"task": "sentiment", "input": "Holden Caulfield did it better.", "answers": ["negative"]}
+{"task": "sentiment", "input": "Holm ... embodies the character with an effortlessly regal charisma.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A quiet treasure -- a film to be savored.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Do not see this film.", "answers": ["negative"]}
+{"task": "sentiment", "input": "Crackerjack entertainment -- nonstop romance, music, suspense and action.", "answers": ["positive"]}
+{"task": "sentiment", "input": "An exquisitely crafted and acted tale.", "answers": ["positive"]}
+{"task": "sentiment", "input": "It all adds up to good fun.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Detox is ultimately a pointless endeavor.", "answers": ["negative"]}
+{"task": "sentiment", "input": "It's a remarkably solid and subtly satirical tour de force.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Overall very good for what it's trying to do.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A fast, funny, highly enjoyable movie.", "answers": ["positive"]}
+{"task": "sentiment", "input": "An absurdist comedy about alienation, separation and loss.", "answers": ["negative"]}
+{"task": "sentiment", "input": "It treats women like idiots.", "answers": ["negative"]}
+{"task": "sentiment", "input": "Among the year's most intriguing explorations of alientation.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A smart, witty follow-up.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Dull, lifeless, and amateurishly assembled.", "answers": ["negative"]}
+{"task": "sentiment", "input": "More whiny downer than corruscating commentary.", "answers": ["negative"]}
+{"task": "sentiment", "input": "A very well-made, funny and entertaining picture.", "answers": ["positive"]}
+{"task": "sentiment", "input": "A movie with a real anarchic flair.", "answers": ["positive"]}
+{"task": "sentiment", "input": "Rarely has so much money delivered so little entertainment.", "answers": ["negative"]}
+{"task": "sentiment", "input": "A wildly inconsistent emotional experience.", "answers": ["negative"]}
+{"task": "translation_en-fr", "input": "place", "answers": ["place", "se placer", "endroit", "poser", "faire", "arriver", "lieu", "mettre", "placer"]}
+{"task": "translation_en-fr", "input": "family", "answers": ["famille"]}
+{"task": "translation_en-fr", "input": "point", "answers": ["case", "opinion", "avis", "indiquer", "aiguille", "aiguillage", "point", "instant", "pointe", "prise", "moment", "péninsule", "but", "flèche", "dixième", "pointer", "prise électrique", "point de vue", "objectif", "virgule"]}
+{"task": "translation_en-fr", "input": "east", "answers": ["oriental", "orientale", "de l'est", "vers l 'est", "est", "à l'est"]}
+{"task": "translation_en-fr", "input": "aircraft", "answers": ["aéronef"]}
+{"task": "translation_en-fr", "input": "title", "answers": ["titre", "intitulé"]}
+{"task": "translation_en-fr", "input": "party", "answers": ["détachement", "partie", "participant", "parti", "veiller", "fêter"]}
+{"task": "translation_en-fr", "input": "victory", "answers": ["victoire"]}
+{"task": "translation_en-fr", "input": "list", "answers": ["liste", "lister"]}
+{"task": "translation_en-fr", "input": "cover", "answers": ["reprendre", "couvercle", "couvrir", "couvert", "couverture"]}
+{"task": "translation_en-fr", "input": "idea", "answers": ["idée", "pensée"]}
+{"task": "translation_en-fr", "input": "loss", "answers": ["défaite", "perte"]}
+{"task": "translation_en-fr", "input": "length", "answers": ["longueur"]}
+{"task": "translation_en-fr", "input": "self", "answers": ["soi-même"]}
+{"task": "translation_en-fr", "input": "broadcast", "answers": ["radiodiffuser", "émission", "diffuser"]}
+{"task": "translation_en-fr", "input": "trade", "answers": ["métier", "échanger", "commerce"]}
+{"task": "translation_en-fr", "input": "energy", "answers": ["courage", "énergie"]}
+{"task": "translation_en-fr", "input": "peak", "answers": ["cime"]}
+{"task": "translation_en-fr", "input": "market", "answers": ["commercialiser", "du marché", "marché"]}
+{"task": "translation_en-fr", "input": "quality", "answers": ["qualité", "de qualité"]}
+{"task": "translation_en-fr", "input": "dance", "answers": ["danse", "danser"]}
+{"task": "translation_en-fr", "input": "county", "answers": ["département", "comté"]}
+{"task": "translation_en-fr", "input": "lot", "answers": ["groupe", "bande", "ensemble", "destin"]}
+{"task": "translation_en-fr", "input": "wing", "answers": ["aile", "ailier"]}
+{"task": "translation_en-fr", "input": "camp", "answers": ["bivouaquer", "camp", "camper"]}
+{"task": "translation_en-fr", "input": "leadership", "answers": ["charisme", "leadership", "autorité"]}
+{"task": "translation_en-fr", "input": "split", "answers": ["diviser", "répartir", "fendre", "séparer", "scinder", "grand écart ; to do the splits: faire le grand écart"]}
+{"task": "translation_en-fr", "input": "leg", "answers": ["jambe"]}
+{"task": "translation_en-fr", "input": "crowd", "answers": ["foule", "monceau"]}
+{"task": "translation_en-fr", "input": "knowledge", "answers": ["science", "savoir", "connaissances", "connaissance"]}
+{"task": "word_in_context", "input": "Sentence 1: Hyenas scavenge. Sentence 2: She scavenged the garbage cans for food. Word: scavenge", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: There are three synagogues in the Jewish section. Sentence 2: Sections from the left ventricle showed diseased tissue. Word: section", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: She ordered some wine for the meal. Sentence 2: Wine is stronger than beer. Word: wine", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: A thing of the spirit. Sentence 2: Things of the heart. Word: thing", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: He tripled to the rightfield corner. Sentence 2: The southeastern corner of the Mediterranean. Word: corner", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: Belabor the obvious. Sentence 2: She was belabored by her fellow students. Word: belabor", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Be careful crossing the street. Sentence 2: The whole street protested the absence of lights. Word: street", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Youth everywhere rises in revolt. Sentence 2: Her youth and beauty is what attracted him to her. Word: youth", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Engrave a letter. Sentence 2: Engrave a pen. Word: engrave", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: To command an army or a ship. Sentence 2: Command the military forces. Word: command", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: The invaders spread their language all over the country. Sentence 2: A big oil spot spread across the water. Word: spread", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Tap a keg of beer. Sentence 2: Tap a maple tree for its syrup. Word: tap", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: Flood the market with tennis shoes. Sentence 2: The swollen river flooded the village. Word: flood", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: English is a cognate of Greek, German, Russian and Persian. Sentence 2: English and, Russian, Icelandic and Irish are all cognates. Word: cognate", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: His success in the marathon was unexpected. Sentence 2: The election was a remarkable success for the Whigs. Word: success", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: The relief pitcher got credit for a save. Sentence 2: The goalie made a brilliant save. Word: save", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: The stick does not bend. Sentence 2: Bend your knees. Word: bend", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Heel a golf ball. Sentence 2: Heel that dance. Word: heel", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: The whole body filed out of the auditorium. Sentence 2: The student body. Word: body", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: Indent the documents. Sentence 2: Indent the paragraphs of a letter. Word: indent", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Direct your anger towards others, not towards yourself. Sentence 2: He directed all his energies into his dissertation. Word: direct", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: She wanted to aim a pun. Sentence 2: He aimed his fists towards his opponent's face. Word: aim", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: The aptness of men to follow example. Sentence 2: The aptness of iron to rust. Word: aptness", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: The embodiment of hope. Sentence 2: A circle was the embodiment of his concept of life. Word: embodiment", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: In the middle of the marathon, David collapsed from fatigue. Sentence 2: Rain during the middle of April. Word: middle", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: They gave full play to the artist's talent. Sentence 2: It was all done in play. Word: play", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: Rise to the occasion. Sentence 2: Her spirits rose when she heard the good news. Word: rise", "answers": ["not the same"]}
+{"task": "word_in_context", "input": "Sentence 1: I am trying to contact my sister. Sentence 2: He never contacted his children after he emigrated to Australia. Word: contact", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: There was an art exhibition on in the town hall. Sentence 2: A boat exhibition. Word: exhibition", "answers": ["same"]}
+{"task": "word_in_context", "input": "Sentence 1: I need him to be nice. Sentence 2: I needed him to go. Word: need", "answers": ["same"]}
+{"task": "active_to_passive", "input": "The professor mentioned the artist.", "answers": ["The artist was mentioned by the professor."]}
+{"task": "active_to_passive", "input": "The presidents recommended the lawyer.", "answers": ["The lawyer was recommended by the presidents."]}
+{"task": "active_to_passive", "input": "The professors thanked the tourists.", "answers": ["The tourists were thanked by the professors."]}
+{"task": "active_to_passive", "input": "The scientist contacted the judge.", "answers": ["The judge was contacted by the scientist."]}
+{"task": "active_to_passive", "input": "The doctor stopped the managers.", "answers": ["The managers were stopped by the doctor."]}
+{"task": "active_to_passive", "input": "The author stopped the senator.", "answers": ["The senator was stopped by the author."]}
+{"task": "active_to_passive", "input": "The authors mentioned the lawyer.", "answers": ["The lawyer was mentioned by the authors."]}
+{"task": "active_to_passive", "input": "The actor believed the senators.", "answers": ["The senators were believed by the actor."]}
+{"task": "active_to_passive", "input": "The judges contacted the athletes.", "answers": ["The athletes were contacted by the judges."]}
+{"task": "active_to_passive", "input": "The judges helped the professor.", "answers": ["The professor was helped by the judges."]}
+{"task": "active_to_passive", "input": "The authors supported the scientist.", "answers": ["The scientist was supported by the authors."]}
+{"task": "active_to_passive", "input": "The judges avoided the students.", "answers": ["The students were avoided by the judges."]}
+{"task": "active_to_passive", "input": "The banker advised the tourists.", "answers": ["The tourists were advised by the banker."]}
+{"task": "active_to_passive", "input": "The presidents introduced the authors.", "answers": ["The authors were introduced by the presidents."]}
+{"task": "active_to_passive", "input": "The senator introduced the bankers.", "answers": ["The bankers were introduced by the senator."]}
+{"task": "active_to_passive", "input": "The doctors admired the student.", "answers": ["The student was admired by the doctors."]}
+{"task": "active_to_passive", "input": "The artists introduced the manager.", "answers": ["The manager was introduced by the artists."]}
+{"task": "active_to_passive", "input": "The student supported the tourist.", "answers": ["The tourist was supported by the student."]}
+{"task": "active_to_passive", "input": "The professors stopped the senators.", "answers": ["The senators were stopped by the professors."]}
+{"task": "active_to_passive", "input": "The judges mentioned the professor.", "answers": ["The professor was mentioned by the judges."]}
+{"task": "active_to_passive", "input": "The bankers avoided the lawyer.", "answers": ["The lawyer was avoided by the bankers."]}
+{"task": "active_to_passive", "input": "The tourist admired the authors.", "answers": ["The authors were admired by the tourist."]}
+{"task": "active_to_passive", "input": "The actor stopped the senator.", "answers": ["The senator was stopped by the actor."]}
+{"task": "active_to_passive", "input": "The senators recommended the artists.", "answers": ["The artists were recommended by the senators."]}
+{"task": "active_to_passive", "input": "The tourists advised the president.", "answers": ["The president was advised by the tourists."]}
+{"task": "active_to_passive", "input": "The actor recognized the manager.", "answers": ["The manager was recognized by the actor."]}
+{"task": "active_to_passive", "input": "The authors contacted the doctors.", "answers": ["The doctors were contacted by the authors."]}
+{"task": "active_to_passive", "input": "The tourists recommended the artists.", "answers": ["The artists were recommended by the tourists."]}
+{"task": "active_to_passive", "input": "The bankers contacted the senators.", "answers": ["The senators were contacted by the bankers."]}
+{"task": "active_to_passive", "input": "The artist admired the managers.", "answers": ["The managers were admired by the artist."]}
+{"task": "negation", "input": "Newton played as quarterback during Super Bowl 50.", "answers": ["Newton did not play as quarterback during Super Bowl 50."]}
+{"task": "negation", "input": "Tucker plays as kicker with the Ravens.", "answers": ["Tucker does not play as kicker with the Ravens."]}
+{"task": "negation", "input": "During Super Bowl 50 the Nintendo gaming company debuted their ad for the first time.", "answers": ["During Super Bowl 50 the Nintendo gaming company did not debut their ad for the first time."]}
+{"task": "negation", "input": "The ad shown during the Super Bowl with the trailer of X-Men: Apocalypse was paid by Fox.", "answers": ["The ad shown during the Super Bowl with the trailer of X-Men: Apocalypse was not paid by Fox."]}
+{"task": "negation", "input": "the Super Bowl in England will be carried by BBC.", "answers": ["the Super Bowl in England will not be carried by BBC."]}
+{"task": "negation", "input": "Manning's top receiver for Super Bowl 50 was Sanders.", "answers": ["Manning's top receiver for Super Bowl 50 was not Sanders."]}
+{"task": "negation", "input": "Nathan Alterman was a poet.", "answers": ["Nathan Alterman was not a poet."]}
+{"task": "negation", "input": "The French spread along with their imperialism spread the Catholic religion.", "answers": ["The French spread along with their imperialism did not spread the Catholic religion."]}
+{"task": "negation", "input": "Wales differs from other areas in the United Kingdom regarding education.", "answers": ["Wales does not differ from other areas in the United Kingdom regarding education."]}
+{"task": "negation", "input": "Norman architecture has rounded arches.", "answers": ["Norman architecture has not rounded arches."]}
+{"task": "negation", "input": "At Westinghouse, Tesla's position was consultant.", "answers": ["At Westinghouse, Tesla's position was not consultant."]}
+{"task": "negation", "input": "In 1915, Edison received a bid.", "answers": ["In 1915, Edison did not receive a bid."]}
+{"task": "negation", "input": "In a multiplication algorithm to produce the same outcome whether multiplying or squaring two integers the input would need to remain constant.", "answers": ["In a multiplication algorithm to produce the same outcome whether multiplying or squaring two integers the input would not need to remain constant."]}
+{"task": "negation", "input": "A teacher is most likely teaching at a school.", "answers": ["A teacher is not most likely teaching at a school."]}
+{"task": "negation", "input": "Teachers might be responsible for student discipline.", "answers": ["Teachers might not be responsible for student discipline."]}
+{"task": "negation", "input": "If a teacher is only teaching one person, they are called a tutor.", "answers": ["If a teacher is only teaching one person, they are not called a tutor."]}
+{"task": "negation", "input": "The youngest student a teacher might have are infants.", "answers": ["The youngest student a teacher might have are not infants."]}
+{"task": "negation", "input": "Teachers likely follow standardized curricula.", "answers": ["Teachers likely do not follow standardized curricula."]}
+{"task": "negation", "input": "A teacher needs to be enthusiastic with regards to their subject matter.", "answers": ["A teacher does not need to be enthusiastic with regards to their subject matter."]}
+{"task": "negation", "input": "The general religious belief of nations that received Huguenot refugees is Protestant.", "answers": ["The general religious belief of nations that received Huguenot refugees is not Protestant."]}
+{"task": "negation", "input": "The LDS Church focuses on spiritual mentorship.", "answers": ["The LDS Church does not focuse on spiritual mentorship."]}
+{"task": "negation", "input": "To impact German culture, Martin Luther translated the Bible.", "answers": ["To impact German culture, Martin Luther did not translate the Bible."]}
+{"task": "negation", "input": "Lurther was declared to be an outlaw by Edict of Works presented by Emperor.", "answers": ["Lurther was declared to be an outlaw by Edict of Works not presented by Emperor."]}
+{"task": "negation", "input": "California used to be ruled by Mexico.", "answers": ["California was never ruled by Mexico."]}
+{"task": "negation", "input": "California Institute of Technology is a private university.", "answers": ["California Institute of Technology is not a private university."]}
+{"task": "negation", "input": "BSkyB was having issues with Thomson.", "answers": ["BSkyB was not having issues with Thomson."]}
+{"task": "negation", "input": "Gasoline and heating gas was rationed by Sweden.", "answers": ["Gasoline and heating gas was not rationed by Sweden."]}
+{"task": "negation", "input": "Non-condensing direct-drive locomotives  for fast passenger trains were notably used in Britain.", "answers": ["Non-condensing direct-drive locomotives  for fast passenger trains were not used in Britain."]}
+{"task": "negation", "input": "An early clue that philogiston theory was wrong was metals weight gain during rusting.", "answers": ["An early clue that philogiston theory was wrong was not metals weight gain during rusting."]}
+{"task": "negation", "input": "The majority of the amazon forest is in Brazil.", "answers": ["The majority of the amazon forest is not in Brazil."]}
+{"task": "dyck_languages", "input": "[ < < { } > [ { [ ] ( ( ( ( < ( ( ) ) > ) ) ) [ ] ) } ] { } < [ { ( { < ( ) > } ) } ( ) ] > > {", "answers": ["} ]"]}
+{"task": "dyck_languages", "input": "< < [ ( ) ] >", "answers": [">"]}
+{"task": "dyck_languages", "input": "( { < > }", "answers": [")"]}
+{"task": "dyck_languages", "input": "[ [ ] < [ { [ { ( { ( ( { < [ ( ( < > ) ) ] > } ) ) < < { < ( { ( [ [ ] ] ) } ) > } > > } ( { [ [ ( [ ( ) ] < { } > { } ) ] ] } [ < { [ ] } > < ( ) > ] [ ( ) ] ) ) } ] } ] > ] [", "answers": ["]"]}
+{"task": "dyck_languages", "input": "< [ ( ) [ ( ) ] ] ( [ < ( ( ( < < { [ ] } < [ { } ] > > > [ < [ < [ < < [ { ( { [ { < ( ) > } ] [ ] } ( ) ) } ] ( [ ( ( < ( ) > ) ) ] ) < > > > ] > ] > ] { } ) ) ) > ] )", "answers": [">"]}
+{"task": "dyck_languages", "input": "{ ( < > ) { { < ( ( ) ) [ ] > } } } [ ( ) [ [ < ( ) > ] ] < < { ( < [ { } ] [ { [ [ ] ] } ] [ ] > < > ) } ( ) { < { } > } > > < { { [ { { [ ] } < < > > } ] ( ( ) ) }", "answers": ["} > ]"]}
+{"task": "dyck_languages", "input": "[ { ( < [ [ ] ] > )", "answers": ["} ]"]}
+{"task": "dyck_languages", "input": "< ( [ < [ ] > ] ) > ( ( [ ]", "answers": [") )"]}
+{"task": "dyck_languages", "input": "{ [ [ < > ] (", "answers": [") ] }"]}
+{"task": "dyck_languages", "input": "( ) ( < < { }", "answers": ["> > )"]}
+{"task": "dyck_languages", "input": "( < [ ] > ) < < { [ < > ] }", "answers": ["> >"]}
+{"task": "dyck_languages", "input": "< > ( < [ { } { [ [ < ( ) { [ < { ( ) } < [ ] > { < [ ] [ [ ] ] > } > ] } > { } ] < { < > } > ] }", "answers": ["] > )"]}
+{"task": "dyck_languages", "input": "< ( [ [ { [ < { ( { } ) } > ] { [ { } < { } > ] } } ] ( ) ( [ { ( { } ) { ( { [ [ ( < < > > { [ ] } ) ] ] } ) } } ] ) ] ) ( [ { { } } ]", "answers": [") >"]}
+{"task": "dyck_languages", "input": "< ( < [ ( ) ] > )", "answers": [">"]}
+{"task": "dyck_languages", "input": "( < < < ( ) >", "answers": ["> > )"]}
+{"task": "dyck_languages", "input": "< { [ < < > > ] ( { ( ) } ) ( ) < >", "answers": ["} >"]}
+{"task": "dyck_languages", "input": "{ { ( ) } } < ( ) ( ( { < > } ) ) > < {", "answers": ["} >"]}
+{"task": "dyck_languages", "input": "[ { } < > [ ] ] < < < [ < < > > ] > >", "answers": [">"]}
+{"task": "dyck_languages", "input": "[ ( [ ( { < > } ) ]", "answers": [") ]"]}
+{"task": "dyck_languages", "input": "[ { { [ < < ( ) > > ] } <", "answers": ["> } ]"]}
+{"task": "dyck_languages", "input": "{ [ [ [ ] ]", "answers": ["] }"]}
+{"task": "dyck_languages", "input": "< ( ( ( < > < [ [ ] ] > ) { } )", "answers": [") >"]}
+{"task": "dyck_languages", "input": "[ < { { < [ [ ] ] > }", "answers": ["} > ]"]}
+{"task": "dyck_languages", "input": "{ { } } { { { ( ( ( { ( { ( ) } ( ) ) ( ) ( [ ( ) ] ) ( [ ] < < [ < ( { { ( ) } } ) > ] ( < > ) [ ] > > ) } ) ) ) } } } { } ( [ [ ( [ { } ] ) { [ ] } ( [ < > ] ) ]", "answers": ["] )"]}
+{"task": "dyck_languages", "input": "{ < > } [ < { } > ] { ( ) (", "answers": [") }"]}
+{"task": "dyck_languages", "input": "< < ( [ < ( ) { { } } > [ [ ] ] [ ] ( < > ) ( { } { } < > [ { [ ] } ] ( [ ( < [ < > ] [ { } { ( < > ) < < > > } ] > ) ] ) < > ) < > { } ] ) [ ( ( [ ] ) < [ < > { ( ) } ( ) { } ] > )", "answers": ["] > >"]}
+{"task": "dyck_languages", "input": "( ( ( ) ) ) [ ] [ < [ [ ] ]", "answers": ["> ]"]}
+{"task": "dyck_languages", "input": "( ( ) ) { ( ) { } { ( ) } < ( [ ] [ ] < [ < { } > [ ] < ( ) > ] > ) > [ [ < { < < [ < ( ) > ] > < ( ) > > } > ] ]", "answers": ["}"]}
+{"task": "dyck_languages", "input": "{ ( < { } > ) ( (", "answers": [") ) }"]}
+{"task": "dyck_languages", "input": "{ < ( ( { < > } ) ) { ( [ < < < { } > > > ] ) } [ ( ) [ ] ] ( [ [ < > [ [ ] ] ] ] ) > ( ( [ ] )", "answers": [") }"]}
+{"task": "object_counting", "input": "I have a violin, three trumpets, a clarinet, a drum, a flute, a piano, an accordion, and a trombone.", "answers": ["ten", "10"]}
+{"task": "object_counting", "input": "I have a duck, a bear, a rabbit, a dog, and a snake.", "answers": ["five", "5"]}
+{"task": "object_counting", "input": "I have a violin, an accordion, three drums, four clarinets, a trombone, and a piano.", "answers": ["eleven", "11"]}
+{"task": "object_counting", "input": "I have a flute, a piano, an accordion, and a trumpet.", "answers": ["four", "4"]}
+{"task": "object_counting", "input": "I have a cauliflower, a mouse, an onion, two lettuce heads, a garlic, a yam, a fish, four potatoes, a carrot, a head of broccoli, and a stalk of celery.", "answers": ["thirteen", "13"]}
+{"task": "object_counting", "input": "I have a cat, a dog, a bear, three pigs, a chicken, five mice, a couch, a fish, and a frog.", "answers": ["fourteen", "14"]}
+{"task": "object_counting", "input": "I have a chicken, a fish, two mice, a snail, a cat, two goats, a rabbit, a peach, a snake, a strawberry, and two bears.", "answers": ["twelve", "12"]}
+{"task": "object_counting", "input": "I have a lettuce head, a head of broccoli, a carrot, a yam, an onion, and a potato.", "answers": ["six", "6"]}
+{"task": "object_counting", "input": "I have a snake, four rabbits, a fish, a cow, a cat, a goat, a bear, two mice, four pigs, and three donkeys.", "answers": ["nineteen", "19"]}
+{"task": "object_counting", "input": "I have a bed, a microwave, a table, four toasters, a chair, and a stove.", "answers": ["nine", "9"]}
+{"task": "object_counting", "input": "I have two violins, a clarinet, a flute, four pianos, five drums, a trumpet, and an accordion.", "answers": ["fifteen", "15"]}
+{"task": "object_counting", "input": "I have a dog, a goat, a chicken, a fish, a cat, a cow, a duck, and a rabbit.", "answers": ["eight", "8"]}
+{"task": "object_counting", "input": "I have three microwaves, and a car.", "answers": ["four", "4"]}
+{"task": "object_counting", "input": "I have a cow, and a donkey.", "answers": ["two", "2"]}
+{"task": "object_counting", "input": "I have three oranges, a peach, a banana, a grape, a blackberry, and an apple.", "answers": ["eight", "8"]}
+{"task": "object_counting", "input": "I have three pianos, an accordion, a violin, four trombones, and a drum.", "answers": ["ten", "10"]}
+{"task": "object_counting", "input": "I have a garlic, a carrot, a lettuce head, a stalk of celery, a cabbage, and a head of broccoli.", "answers": ["six", "6"]}
+{"task": "object_counting", "input": "I have a piano, three accordions, a drum, a flute, and a trumpet.", "answers": ["seven", "7"]}
+{"task": "object_counting", "input": "I have four ovens, a bed, a stove, a microwave, and a car.", "answers": ["eight", "8"]}
+{"task": "object_counting", "input": "I have a table, three fridges, a chair, a stove, a toaster, two lamps, an oven, a bed, a microwave, and a couch.", "answers": ["thirteen", "13"]}
+{"task": "object_counting", "input": "I have a table, a bed, a couch, a stove, three chairs, a car, and three fridges.", "answers": ["eleven", "11"]}
+{"task": "object_counting", "input": "I have a drum, a lettuce head, a piano, an accordion, a cauliflower, a garlic, and a trombone.", "answers": ["four", "4"]}
+{"task": "object_counting", "input": "I have two onions, and a stalk of celery.", "answers": ["three", "3"]}
+{"task": "object_counting", "input": "I have a snake, a frog, and a duck.", "answers": ["three", "3"]}
+{"task": "object_counting", "input": "I have a clarinet, a violin, and a flute.", "answers": ["three", "3"]}
+{"task": "object_counting", "input": "I have a carrot, a lettuce head, three stalks of celery, and a cauliflower.", "answers": ["six", "6"]}
+{"task": "object_counting", "input": "I have a stove, a chair, a table, a lamp, a couch, and three fridges.", "answers": ["eight", "8"]}
+{"task": "object_counting", "input": "I have a stalk of celery, a cabbage, a carrot, two onions, a potato, four cauliflowers, a yam, a garlic, and a head of broccoli.", "answers": ["thirteen", "13"]}
+{"task": "object_counting", "input": "I have a microwave, a chair, a lamp, a toaster, two ovens, a table, a bed, two stoves, and a fridge.", "answers": ["eleven", "11"]}
+{"task": "object_counting", "input": "I have a banana, a flute, two clarinets, and a drum.", "answers": ["four", "4"]}
+{"task": "ruin_names", "input": "killing joke", "answers": ["killing toke"]}
+{"task": "ruin_names", "input": "the dark knight", "answers": ["the dork knight"]}
+{"task": "ruin_names", "input": "the moon and sixpence", "answers": ["the loon and sixpence"]}
+{"task": "ruin_names", "input": "mank", "answers": ["monk"]}
+{"task": "ruin_names", "input": "the beach boys", "answers": ["the leach boys"]}
+{"task": "ruin_names", "input": "dracula has risen from the grave", "answers": ["dracula has risen from the grate"]}
+{"task": "ruin_names", "input": "the wizard of oz", "answers": ["the lizard of oz"]}
+{"task": "ruin_names", "input": "red hot chili peppers", "answers": ["red hot chili poppers"]}
+{"task": "ruin_names", "input": "bend it like beckham", "answers": ["mend it like beckham"]}
+{"task": "ruin_names", "input": "goodfellas", "answers": ["foodfellas"]}
+{"task": "ruin_names", "input": "backstreet boys", "answers": ["backstreet toys"]}
+{"task": "ruin_names", "input": "taylor swift", "answers": ["taylor snift"]}
+{"task": "ruin_names", "input": "sly and the family stone", "answers": ["soy and the family stone"]}
+{"task": "ruin_names", "input": "singin' in the rain", "answers": ["singin' in the ruin"]}
+{"task": "ruin_names", "input": "midnight oil", "answers": ["midnight soil"]}
+{"task": "ruin_names", "input": "first cow", "answers": ["first crow"]}
+{"task": "ruin_names", "input": "bob seger & the silver bullet band", "answers": ["bob seger & the silver mullet band"]}
+{"task": "ruin_names", "input": "rush", "answers": ["rash"]}
+{"task": "ruin_names", "input": "paul revere and the raiders", "answers": ["paul severe and the raiders"]}
+{"task": "ruin_names", "input": "toto", "answers": ["tote"]}
+{"task": "ruin_names", "input": "life of brian", "answers": ["lift of brian"]}
+{"task": "ruin_names", "input": "missy elliott", "answers": ["pissy elliott"]}
+{"task": "ruin_names", "input": "new order", "answers": ["few order"]}
+{"task": "ruin_names", "input": "paul oakenfold", "answers": ["paul joakenfold"]}
+{"task": "ruin_names", "input": "the beatles", "answers": ["the beagles"]}
+{"task": "ruin_names", "input": "bon iver", "answers": ["bon liver"]}
+{"task": "ruin_names", "input": "10 years", "answers": ["10 ears"]}
+{"task": "ruin_names", "input": "things to do in denver when you're dead", "answers": ["things to do in denver when you're deaf"]}
+{"task": "ruin_names", "input": "sweet ignitions", "answers": ["sweat ignitions"]}
+{"task": "ruin_names", "input": "moonlight", "answers": ["goonlight"]}
+{"task": "word_sorting", "input": "backstop stenography pliocene", "answers": ["backstop pliocene stenography"]}
+{"task": "word_sorting", "input": "thalia commensurable ret menlo hilt timepiece nirvana nondescript fair laughlin haggle finish improvisate parisian tirade ave aerobacter", "answers": ["aerobacter ave commensurable fair finish haggle hilt improvisate laughlin menlo nirvana nondescript parisian ret thalia timepiece tirade"]}
+{"task": "word_sorting", "input": "grammatic standard secure", "answers": ["grammatic secure standard"]}
+{"task": "word_sorting", "input": "norwegian coset tribal different hepburn balcony shoot berne cargoes incapable inattentive euglena btl holden annie paranoia put", "answers": ["annie balcony berne btl cargoes coset different euglena hepburn holden inattentive incapable norwegian paranoia put shoot tribal"]}
+{"task": "word_sorting", "input": "birthrate basel capetown chicanery tricky banjo crimson bile claimant", "answers": ["banjo basel bile birthrate capetown chicanery claimant crimson tricky"]}
+{"task": "word_sorting", "input": "herewith grebe marco horsedom disambiguate fluffy constructible literary hurt hypothyroid compile anaheim dickcissel gospel histamine", "answers": ["anaheim compile constructible dickcissel disambiguate fluffy gospel grebe herewith histamine horsedom hurt hypothyroid literary marco"]}
+{"task": "word_sorting", "input": "uncouth snivel presbyterian cotta asynchrony almaden squatting glacis wahl militia keno dollop slim", "answers": ["almaden asynchrony cotta dollop glacis keno militia presbyterian slim snivel squatting uncouth wahl"]}
+{"task": "word_sorting", "input": "cancellate navigable montague commingle piety convoy propriety debar toenail epigram chintz lancet calvary vendetta candela", "answers": ["calvary cancellate candela chintz commingle convoy debar epigram lancet montague navigable piety propriety toenail vendetta"]}
+{"task": "word_sorting", "input": "interrupt warmup louvre summer nicotine steeplebush debbie brenda gradate doubt anent twit niece pullover countywide organic gorse", "answers": ["anent brenda countywide debbie doubt gorse gradate interrupt louvre nicotine niece organic pullover steeplebush summer twit warmup"]}
+{"task": "word_sorting", "input": "bearberry radiometer dairylea broke quarantine dyne mourn frigga whomever", "answers": ["bearberry broke dairylea dyne frigga mourn quarantine radiometer whomever"]}
+{"task": "word_sorting", "input": "fur fizzle sal degenerate invoke stuffy conant leaflet essay highwaymen lugging indefinable", "answers": ["conant degenerate essay fizzle fur highwaymen indefinable invoke leaflet lugging sal stuffy"]}
+{"task": "word_sorting", "input": "chintzy beverage", "answers": ["beverage chintzy"]}
+{"task": "word_sorting", "input": "bituminous ami decadent knickerbocker exeter", "answers": ["ami bituminous decadent exeter knickerbocker"]}
+{"task": "word_sorting", "input": "champaign boycott", "answers": ["boycott champaign"]}
+{"task": "word_sorting", "input": "haversack plumbago xhosa dal laugh smudge primordial accuracy northbound salutory stretch tamp caroline geocentric", "answers": ["accuracy caroline dal geocentric haversack laugh northbound plumbago primordial salutory smudge stretch tamp xhosa"]}
+{"task": "word_sorting", "input": "hangout drafty supposable sushi proscenium anticonvulsant you'd magnificent scrub embolden hasty pewee carrageen disseminate glamour discovery registrar acuity", "answers": ["acuity anticonvulsant carrageen discovery disseminate drafty embolden glamour hangout hasty magnificent pewee proscenium registrar scrub supposable sushi you'd"]}
+{"task": "word_sorting", "input": "phosphate perceive hewn longitudinal proponent pepsi crater watchful quite dystrophy douglas instructor wisecrack nassau", "answers": ["crater douglas dystrophy hewn instructor longitudinal nassau pepsi perceive phosphate proponent quite watchful wisecrack"]}
+{"task": "word_sorting", "input": "tumultuous destiny kimono", "answers": ["destiny kimono tumultuous"]}
+{"task": "word_sorting", "input": "spermatophyte obverse doorknob key", "answers": ["doorknob key obverse spermatophyte"]}
+{"task": "word_sorting", "input": "dandelion knoll ambitious intractable alberta spalding collard cumin hast caviness boundary condensate wit jukebox deduce rather parthia perceptual privet puffery", "answers": ["alberta ambitious boundary caviness collard condensate cumin dandelion deduce hast intractable jukebox knoll parthia perceptual privet puffery rather spalding wit"]}
+{"task": "word_sorting", "input": "mixture oblong pentagonal vella stuttgart metallography consequent thin disquisition spiky virus comma earthy walcott wolverine shave lippincott nullstellensatz edible schafer", "answers": ["comma consequent disquisition earthy edible lippincott metallography mixture nullstellensatz oblong pentagonal schafer shave spiky stuttgart thin vella virus walcott wolverine"]}
+{"task": "word_sorting", "input": "herd hindmost people rhombi nashua gradient silk sparta symbiosis enzyme avocado olivetti euphoric newfound greenberg checkout havoc treason kremlin quay", "answers": ["avocado checkout enzyme euphoric gradient greenberg havoc herd hindmost kremlin nashua newfound olivetti people quay rhombi silk sparta symbiosis treason"]}
+{"task": "word_sorting", "input": "minerva jesuit converse brigade fluorescent lighthearted sharpe", "answers": ["brigade converse fluorescent jesuit lighthearted minerva sharpe"]}
+{"task": "word_sorting", "input": "fife doubleheader grackle margaret vehicle plan adultery amen", "answers": ["adultery amen doubleheader fife grackle margaret plan vehicle"]}
+{"task": "word_sorting", "input": "sociolinguistic nigeria odysseus demystify proton voltaire penny contaminate bighorn stirrup", "answers": ["bighorn contaminate demystify nigeria odysseus penny proton sociolinguistic stirrup voltaire"]}
+{"task": "word_sorting", "input": "geld couple waterman vikram circumlocution brillouin error swatch benefactor", "answers": ["benefactor brillouin circumlocution couple error geld swatch vikram waterman"]}
+{"task": "word_sorting", "input": "frankfurt peer micro alkali baby perceive inoperative colonial spica tableau", "answers": ["alkali baby colonial frankfurt inoperative micro peer perceive spica tableau"]}
+{"task": "word_sorting", "input": "quantitative desirous glove amarillo augment droll deacon wolfgang nucleant aphid k transcend indestructible mohammedan swig gosling", "answers": ["amarillo aphid augment deacon desirous droll glove gosling indestructible k mohammedan nucleant quantitative swig transcend wolfgang"]}
+{"task": "word_sorting", "input": "dynastic inflammable prick tristan vitiate tackle stagnate conglomerate nebulae phosphide", "answers": ["conglomerate dynastic inflammable nebulae phosphide prick stagnate tackle tristan vitiate"]}
+{"task": "word_sorting", "input": "discus tank practicable watershed laurentian", "answers": ["discus laurentian practicable tank watershed"]}
+{"task": "disambiguation_qa", "input": "After meeting with the producers, Sam went to their office.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The reporter and the chef discuss his favorite dishes.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The visitor told the teacher that they liked the cake.", "answers": ["The visitor liked the cake"]}
+{"task": "disambiguation_qa", "input": "The developer corrected the secretary because she better understood the problem.", "answers": ["The developer understood the problem"]}
+{"task": "disambiguation_qa", "input": "The sheriff protected the writer because they uphold the peace.", "answers": ["The sheriff upholds the peace"]}
+{"task": "disambiguation_qa", "input": "The developer met with the secretary because he made a mistake.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The educator was meeting with a student to discuss his grading policy.", "answers": ["It was the educator's grading policy"]}
+{"task": "disambiguation_qa", "input": "The sheriff protected the writer because he upholds the peace.", "answers": ["The sheriff upholds the peace"]}
+{"task": "disambiguation_qa", "input": "The cleaner called the guard and asked her to open the door.", "answers": ["Asked the guard"]}
+{"task": "disambiguation_qa", "input": "The reporter and the chef will discuss his favorite dishes.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The chief told the counselor that they took the day off.", "answers": ["The chief took the day off"]}
+{"task": "disambiguation_qa", "input": "The worker told the pedestrian that he was repairing the sidewalk as quickly as possible.", "answers": ["The worker was repairing"]}
+{"task": "disambiguation_qa", "input": "The developer met with the designer because his idea can be implemented.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The writer tried to fool the salesperson and told them a fake story.", "answers": ["Told the salesperson a fake story"]}
+{"task": "disambiguation_qa", "input": "The assistant asked the physician if she could borrow some money.", "answers": ["Asked if the assistant could borrow money"]}
+{"task": "disambiguation_qa", "input": "The mechanic greets the receptionist because she is standing in front of the door.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The carpenter made a desk for the clerk and gave them a discount.", "answers": ["Gave the clerk a discount"]}
+{"task": "disambiguation_qa", "input": "The CEO bought the accountant a car because they needed one.", "answers": ["The accountant needed a car"]}
+{"task": "disambiguation_qa", "input": "The supervisor gave the employee feedback on her stellar performance.", "answers": ["It was the employee's performance"]}
+{"task": "disambiguation_qa", "input": "The secretary corrected the developer because they better understood the problem.", "answers": ["The secretary understood the problem"]}
+{"task": "disambiguation_qa", "input": "The assistant asked the physician if he needs any help.", "answers": ["Asked if the physician needs help"]}
+{"task": "disambiguation_qa", "input": "The designer collaborated with the carpenter and gave him a blueprint.", "answers": ["Gave the carpenter a blueprint"]}
+{"task": "disambiguation_qa", "input": "After meeting with the producers, Sam will go to her office.", "answers": ["It will be Sam's office"]}
+{"task": "disambiguation_qa", "input": "The writer tried to fool the salesperson and told him a fake story.", "answers": ["Told the salesperson a fake story"]}
+{"task": "disambiguation_qa", "input": "The customer asked the salesperson if he could send the prices of each product.", "answers": ["The salesperson would send the prices"]}
+{"task": "disambiguation_qa", "input": "My cousin called his boss for more information", "answers": ["They were my cousin's boss"]}
+{"task": "disambiguation_qa", "input": "The developer met with the designer because her idea can be implemented.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The designer collaborated with the carpenter and gave her a blueprint.", "answers": ["Gave the carpenter a blueprint"]}
+{"task": "disambiguation_qa", "input": "After meeting with the producers, Sam will go to their office.", "answers": ["Ambiguous"]}
+{"task": "disambiguation_qa", "input": "The driver yelled at the tailor after she broke a window.", "answers": ["Ambiguous"]}
