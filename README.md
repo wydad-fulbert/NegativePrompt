@@ -75,7 +75,7 @@ Ce projet vise à :
 NegativePrompt/
 ├── notebooks/
 │   ├── main_reproduction.ipynb
-│   └── analysis.ipynb
+│   └── ANALYSES_final.ipynb
 │
 ├── scripts/
 │   ├── reproduction/
