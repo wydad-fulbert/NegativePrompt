@@ -1,1 +1,0 @@
-Résultats de reproduction
