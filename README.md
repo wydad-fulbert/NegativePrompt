@@ -1,4 +1,4 @@
-#NegativePrompt — Reproduction, analyse et pistes d’amélioration
+NegativePrompt — Reproduction, analyse et pistes d’amélioration
 
 
 
